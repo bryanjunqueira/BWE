@@ -50,15 +50,31 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [headerVisible, setHeaderVisible] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
+  const lastScrollY = useRef(0)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
   const isHome = location.pathname === '/'
 
   const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 40)
+    const currentScrollY = window.scrollY
+    setScrolled(currentScrollY > 40)
+
+    if (currentScrollY <= 60) {
+      setHeaderVisible(true)
+    } else if (currentScrollY > lastScrollY.current + 8) {
+      // Rolando para baixo: recolhe o header
+      setHeaderVisible(false)
+      setDropdownOpen(false)
+    } else if (currentScrollY < lastScrollY.current - 8) {
+      // Rolando para cima: mostra o header
+      setHeaderVisible(true)
+    }
+
+    lastScrollY.current = currentScrollY
   }, [])
 
   useEffect(() => {
@@ -115,8 +131,10 @@ export default function Header() {
     }
   }
 
+  const isHidden = !headerVisible && !menuOpen
+
   return (
-    <header className={styles.headerWrapper}>
+    <header className={`${styles.headerWrapper} ${isHidden ? styles.headerHidden : ''}`}>
       {/* Top Bar with Stylized Cut Accent */}
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarInner}`}>
