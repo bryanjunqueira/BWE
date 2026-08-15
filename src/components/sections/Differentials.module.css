@@ -1,0 +1,134 @@
+/* Differentials.module.css */
+
+.section {
+  position: relative;
+  background: var(--blue-900);
+  padding-block: var(--space-24);
+  overflow: hidden;
+}
+
+/* Background photo — right half */
+.bgHalf {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.6);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--blue-900) 0%,
+    rgba(10,22,40,0.85) 30%,
+    rgba(10,22,40,0.45) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.header {
+  max-width: 520px;
+  margin-bottom: var(--space-12);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  max-width: 900px;
+}
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: background var(--transition-base), border-color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(58,114,212,0.2);
+  color: var(--blue-200);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+}
+
+.cardTitle {
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--white);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bgHalf {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

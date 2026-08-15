@@ -1,0 +1,107 @@
+/* Partners.module.css */
+
+.section {
+  background: var(--white);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.heading {
+  font-size: clamp(1.625rem, 2.8vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue-900);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* Marquee */
+.marqueeWrapper {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-4);
+  /* Fade masks */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.partnerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5) var(--space-10);
+  border-right: 1px solid var(--gray-200);
+  min-width: 200px;
+  transition: background var(--transition-base);
+}
+
+.partnerItem:hover {
+  background: var(--blue-50);
+}
+
+.partnerName {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--gray-400);
+  letter-spacing: -0.01em;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.partnerItem:hover .partnerName {
+  color: var(--blue-700);
+}
+
+/* Note */
+.partnerNote {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  font-style: italic;
+  margin-top: var(--space-10);
+  padding: var(--space-4) var(--space-6);
+  background: var(--gray-50);
+  border: 1px dashed var(--gray-200);
+  border-radius: var(--radius-md);
+  max-width: 560px;
+  margin-inline: auto;
+}

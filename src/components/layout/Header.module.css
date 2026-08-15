@@ -1,0 +1,408 @@
+/* Header.module.css */
+
+.headerWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ============================================================
+   TOP BAR (Stylized with info & diagonal cut accent)
+   ============================================================ */
+.topBar {
+  background: #081222;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8125rem;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.topBarInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+.topBarItem:hover {
+  color: #6ea0e8;
+}
+
+.topBarDivider {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+/* Diagonal cut badge referencing site blue theme */
+.topBarRedBadge {
+  background: #1a4290;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  padding: 0 24px 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+}
+
+.topBarSocials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.topSocialIcon {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.topSocialIcon:hover {
+  color: #ffffff;
+}
+
+/* ============================================================
+   MAIN NAVBAR (WHITE BACKGROUND & ENVELOPE BOTTOM EDGE)
+   ============================================================ */
+.mainNav {
+  background: #ffffff;
+  position: relative;
+  transition: box-shadow var(--transition-base), background var(--transition-base);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mainNavScrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.navInner {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* Logo — Extra large transparent logo scaled up while keeping header height at 70px */
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+}
+
+.logoImg {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transform: scale(1.7);
+  transform-origin: left center;
+  transition: transform var(--transition-fast);
+  margin-right: 48px;
+}
+
+.logoLink:hover .logoImg {
+  transform: scale(1.75);
+}
+
+/* Desktop Navigation Links */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111827;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.navLink:hover,
+.navLinkOpen {
+  color: #1a4290;
+  background: #f0f4fc;
+}
+
+.navLinkActive {
+  color: #1a4290;
+  font-weight: 700;
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   DROPDOWN MENU "SOLUÇÕES" (Matching Image 3)
+   ============================================================ */
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  width: 320px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+  border: 1px solid #e5e7eb;
+  padding: var(--space-3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 1100;
+}
+
+.dropdownMenuVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownHeader {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  padding: 6px 12px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 6px;
+}
+
+.dropdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background: #f0f5ff;
+}
+
+.dropdownItemIcon {
+  color: #1a4290;
+  background: #eaf1fd;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dropdownItemText {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownItemTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dropdownItemDesc {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+/* CTA button */
+.ctaBtn {
+  font-size: 0.875rem;
+  padding: 12px 24px;
+}
+
+/* Envelope Bottom Edge Flap */
+.envelopeBottomEdge {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.envelopeSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #0f172a;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #ffffff;
+  z-index: 1300;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.mobileLogoImg {
+  height: 44px;
+}
+
+.mobileClose {
+  background: none;
+  border: none;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.mobileLink {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 8px 0;
+  display: block;
+}
+
+.mobileCta {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .topBarInfo .topBarItem:nth-child(n+3) {
+    display: none;
+  }
+  .desktopNav {
+    display: none;
+  }
+  .ctaBtn {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+}

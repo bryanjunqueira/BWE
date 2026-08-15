@@ -1,0 +1,165 @@
+/* About.module.css */
+
+.about {
+  background: var(--white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+/* Text column */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue-900);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-3);
+}
+
+.leadText {
+  font-size: 1.0625rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--blue-800);
+  line-height: 1.7;
+  border-left: 3px solid var(--blue-300);
+  padding-left: var(--space-5);
+}
+
+.bodyText {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
+/* Pillars */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.pillar {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.pillarLine {
+  width: 3px;
+  min-height: 44px;
+  background: var(--blue-200);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.pillarLabel {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue-900);
+  margin-bottom: 2px;
+}
+
+.pillarDesc {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* Image column */
+.imageCol {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.55) 0%, transparent 50%);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-lg);
+}
+
+.badgeYear {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-black);
+  color: var(--blue-800);
+  line-height: 1;
+}
+
+.badgeText {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-weight: var(--font-weight-medium);
+  margin-top: 4px;
+}
+
+/* Decorative block behind image */
+.decorBlock {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60%;
+  height: 60%;
+  background: var(--blue-50);
+  border-radius: var(--radius-xl);
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .imageCol {
+    order: -1;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16/9;
+  }
+
+  .decorBlock {
+    display: none;
+  }
+}

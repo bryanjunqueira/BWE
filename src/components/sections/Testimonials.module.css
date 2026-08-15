@@ -1,0 +1,141 @@
+/* Testimonials.module.css */
+
+.section {
+  background: var(--gray-50);
+}
+
+.header {
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue-900);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+.placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  color: #92400e;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Stars */
+.stars {
+  display: flex;
+  gap: 3px;
+  color: #f59e0b;
+}
+
+/* Quote */
+.quote {
+  flex: 1;
+}
+
+.quoteText {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* Author */
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--gray-100);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue-100);
+  color: var(--blue-800);
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorName {
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue-900);
+}
+
+.authorRole {
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

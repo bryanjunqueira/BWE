@@ -1,0 +1,126 @@
+/* FAQ.module.css */
+
+.section {
+  background: var(--white);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+/* Header column */
+.headerCol {
+  position: sticky;
+  top: calc(var(--nav-height) + 40px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.heading {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue-900);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-3);
+}
+
+.subheading {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+/* Accordion column */
+.accordionCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Item */
+.item {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  background: var(--white);
+}
+
+.item:hover {
+  border-color: var(--blue-200);
+}
+
+.itemOpen {
+  border-color: var(--blue-300);
+  box-shadow: 0 4px 20px rgba(13,32,69,0.08);
+}
+
+/* Trigger */
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.triggerText {
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue-900);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.triggerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--blue-50);
+  color: var(--blue-700);
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.itemOpen .triggerIcon {
+  background: var(--blue-800);
+  color: var(--white);
+}
+
+/* Answer */
+.answer {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.answerText {
+  padding: 0 var(--space-6) var(--space-6);
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .headerCol {
+    position: static;
+  }
+}
