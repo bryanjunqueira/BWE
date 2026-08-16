@@ -16,10 +16,15 @@ export default function Hero() {
   return (
     <section id="inicio" className={styles.hero} aria-label="Seção principal">
       {/* Background image with overlay */}
-      <div
-        className={styles.bg}
-        style={{ backgroundImage: `url(${heroBg})` }}
+      <img
+        src={heroBg}
+        alt=""
         aria-hidden="true"
+        className={styles.bg}
+        // @ts-ignore
+        fetchpriority="high"
+        loading="eager"
+        decoding="sync"
       />
       <div className={styles.overlay} aria-hidden="true" />
 
