@@ -50,8 +50,9 @@
 .content {
   position: relative;
   z-index: 10;
-  padding-top: calc(var(--nav-height) + 20px);
-  padding-bottom: 50px;
+  width: 100%;
+  padding-top: var(--nav-height);
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -59,6 +60,7 @@
 
 .contentInner {
   max-width: 960px;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -179,7 +181,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .content {
-    padding-top: calc(var(--nav-height) + 32px);
+    padding-top: calc(var(--nav-height) + 24px);
     padding-bottom: 60px;
   }
 

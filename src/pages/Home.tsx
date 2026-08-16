@@ -6,8 +6,7 @@ import Services from '../components/sections/Services'
 import Differentials from '../components/sections/Differentials'
 import Partners from '../components/sections/Partners'
 import Testimonials from '../components/sections/Testimonials'
-import FAQ from '../components/sections/FAQ'
-import Contact from '../components/sections/Contact'
+import Location from '../components/sections/Location'
 import CtaFinal from '../components/sections/CtaFinal'
 import WhatsAppFloat from '../components/ui/WhatsAppFloat'
 
@@ -22,8 +21,7 @@ export default function Home() {
         <Differentials />
         <Partners />
         <Testimonials />
-        <FAQ />
-        <Contact />
+        <Location />
         <CtaFinal />
       </main>
       <Footer />

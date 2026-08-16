@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   Menu, X, Phone, Mail, MapPin, ChevronDown,
   Shield, Camera, Fingerprint, MonitorSmartphone, Cpu,
@@ -8,44 +8,50 @@ import {
 import styles from './Header.module.css'
 import logoBwe from '../../assets/logo-bwe-transparent.png'
 
+type NavLink = {
+  label: string
+  href: string
+  hasDropdown?: boolean
+  isRoute?: boolean
+  target?: '_blank'
+  rel?: string
+}
+
 const SOLUCOES_ITEMS = [
   {
-    title: 'Monitoramento de Alarmes',
-    desc: 'Proteção 24h com resposta rápida e central especializada.',
+    title: 'Alarmes',
     icon: <Shield size={18} />,
-    href: '#servicos',
+    href: '/solucoes/alarmes',
   },
   {
-    title: 'CFTV / Sistema de Câmeras',
-    desc: 'Gravação HD, visão noturna e acesso remoto no celular.',
+    title: 'Câmeras',
     icon: <Camera size={18} />,
-    href: '#servicos',
+    href: '/solucoes/cameras',
   },
   {
-    title: 'Controle de Acesso',
-    desc: 'Biometria, leitores faciais e gestão de entradas/saídas.',
+    title: 'Biometria e digital',
     icon: <Fingerprint size={18} />,
-    href: '#servicos',
+    href: '/solucoes/biometria-digital',
   },
   {
     title: 'Portaria Remota',
-    desc: 'Eficiência operacional com atendimento remoto 24/7.',
     icon: <MonitorSmartphone size={18} />,
-    href: '#servicos',
+    href: '/solucoes/portaria-remota',
   },
   {
-    title: 'Soluções em Tecnologia',
-    desc: 'Projetos sob medida e integração de sistemas inteligentes.',
+    title: 'Tecnologia',
     icon: <Cpu size={18} />,
-    href: '#servicos',
+    href: '/solucoes/tecnologia',
   },
 ]
 
-const NAV_LINKS = [
-  { label: 'Sobre',    href: '#sobre' },
-  { label: 'Soluções', href: '#servicos', hasDropdown: true },
-  { label: 'Parceiros',href: '#parceiros' },
-  { label: 'Contato',  href: '#contato' },
+const NAV_LINKS: NavLink[] = [
+  { label: 'Sobre',     href: '#sobre' },
+  { label: 'Soluções',  href: '#servicos', hasDropdown: true },
+  { label: 'Parceiros', href: '#parceiros' },
+  { label: 'Localização', href: '#localizacao' },
+  { label: 'Carreira',  href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Contato',   href: '#contato' },
 ]
 
 export default function Header() {
@@ -57,6 +63,7 @@ export default function Header() {
   const lastScrollY = useRef(0)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
+  const navigate = useNavigate()
   const isHome = location.pathname === '/'
 
   const handleScroll = useCallback(() => {
@@ -84,7 +91,7 @@ export default function Header() {
 
   // Active section tracking
   useEffect(() => {
-    const ids = NAV_LINKS.map(l => l.href.replace('#', ''))
+    const ids = NAV_LINKS.filter(l => !l.isRoute).map(l => l.href.replace('#', ''))
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -122,13 +129,22 @@ export default function Header() {
   const scrollToSection = (href: string) => {
     setMenuOpen(false)
     setDropdownOpen(false)
-    if (!isHome) return
+    if (!isHome) {
+      navigate(`/${href}`)
+      return
+    }
     const id = href.replace('#', '')
     const el = document.getElementById(id)
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - 110
       window.scrollTo({ top, behavior: 'smooth' })
     }
+  }
+
+  const openQuoteDrawer = () => {
+    setMenuOpen(false)
+    setDropdownOpen(false)
+    window.dispatchEvent(new Event('open-quote-drawer'))
   }
 
   const isHidden = !headerVisible && !menuOpen
@@ -205,11 +221,13 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation — Only "Sobre", "Soluções", "Parceiros", "Contato" */}
+          {/* Desktop Navigation */}
           <nav className={styles.desktopNav} aria-label="Navegação principal">
             {NAV_LINKS.map(link => {
               const isSolucoes = link.hasDropdown
-              const isActive = activeSection === link.href.replace('#', '')
+              const isActive = link.isRoute
+                ? location.pathname === link.href
+                : isHome && activeSection === link.href.replace('#', '')
 
               if (isSolucoes) {
                 return (
@@ -220,14 +238,18 @@ export default function Header() {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <button
+                    <a
+                      href={isHome ? link.href : `/${link.href}`}
                       className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''} ${dropdownOpen ? styles.navLinkOpen : ''}`}
-                      onClick={() => setDropdownOpen(prev => !prev)}
+                      onClick={e => {
+                        e.preventDefault()
+                        scrollToSection(link.href)
+                      }}
                       aria-expanded={dropdownOpen}
                     >
                       {link.label}
                       <ChevronDown size={14} className={`${styles.chevron} ${dropdownOpen ? styles.chevronRotated : ''}`} />
-                    </button>
+                    </a>
 
                     {/* Soluções Dropdown Menu (Reference Image 3) */}
                     <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.dropdownMenuVisible : ''}`}>
@@ -236,29 +258,37 @@ export default function Header() {
                       </div>
                       <div className={styles.dropdownList}>
                         {SOLUCOES_ITEMS.map(item => (
-                          <a
+                          <Link
                             key={item.title}
-                            href={isHome ? item.href : `/${item.href}`}
+                            to={item.href}
                             className={styles.dropdownItem}
-                            onClick={e => {
-                              if (isHome) {
-                                e.preventDefault()
-                                scrollToSection(item.href)
-                              }
-                            }}
+                            onClick={() => setDropdownOpen(false)}
                           >
                             <div className={styles.dropdownItemIcon}>
                               {item.icon}
                             </div>
                             <div className={styles.dropdownItemText}>
                               <span className={styles.dropdownItemTitle}>{item.title}</span>
-                              <span className={styles.dropdownItemDesc}>{item.desc}</span>
                             </div>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   </div>
+                )
+              }
+
+              if (link.isRoute) {
+                return (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                    target={link.target}
+                    rel={link.rel}
+                  >
+                    {link.label}
+                  </Link>
                 )
               }
 
@@ -285,10 +315,8 @@ export default function Header() {
             href="#contato"
             className={`btn btn-primary ${styles.ctaBtn}`}
             onClick={e => {
-              if (isHome) {
-                e.preventDefault()
-                scrollToSection('#contato')
-              }
+              e.preventDefault()
+              openQuoteDrawer()
             }}
           >
             Solicitar orçamento
@@ -343,38 +371,34 @@ export default function Header() {
         <ul className={styles.mobileLinks}>
           {NAV_LINKS.map(link => (
             <li key={link.href}>
-              <a
-                href={isHome ? link.href : `/${link.href}`}
-                className={styles.mobileLink}
-                onClick={e => {
-                  if (isHome) {
-                    e.preventDefault()
-                    scrollToSection(link.href)
-                  }
-                }}
-              >
-                {link.label}
-              </a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className={`${styles.mobileLink} ${location.pathname === link.href ? styles.mobileLinkActive : ''}`}
+                  target={link.target}
+                  rel={link.rel}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={isHome ? link.href : `/${link.href}`}
+                  className={styles.mobileLink}
+                  onClick={e => {
+                    if (isHome) {
+                      e.preventDefault()
+                      scrollToSection(link.href)
+                    }
+                  }}
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
 
-        <div className={styles.mobileCta}>
-          <a
-            href="#contato"
-            className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center' }}
-            onClick={e => {
-              if (isHome) {
-                e.preventDefault()
-                scrollToSection('#contato')
-                setMenuOpen(false)
-              }
-            }}
-          >
-            Solicitar orçamento
-          </a>
-        </div>
       </nav>
     </header>
   )

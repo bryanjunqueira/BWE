@@ -2,24 +2,23 @@ import { Link } from 'react-router-dom'
 import { Instagram, Facebook, MessageCircle, Phone, Mail, MapPin } from 'lucide-react'
 import styles from './Footer.module.css'
 import logoWhite from '../../assets/logo-white.png'
+import { SOLUTIONS, getSolutionPath } from '../../data/solutions'
 
-const SERVICES_LINKS = [
-  'Monitoramento de alarmes',
-  'CFTV — Sistema de câmeras',
-  'Controle de acesso',
-  'Portaria remota',
-  'Soluções em tecnologia',
-]
+type QuickLink = {
+  label: string
+  href: string
+  isRoute?: boolean
+}
 
-const QUICK_LINKS = [
-  { label: 'Início',        href: '#inicio'       },
-  { label: 'Sobre',         href: '#sobre'         },
-  { label: 'Serviços',      href: '#servicos'      },
-  { label: 'Diferenciais',  href: '#diferenciais'  },
-  { label: 'Parceiros',     href: '#parceiros'     },
-  { label: 'Depoimentos',   href: '#depoimentos'   },
-  { label: 'FAQ',           href: '#faq'           },
-  { label: 'Contato',       href: '#contato'       },
+const QUICK_LINKS: QuickLink[] = [
+  { label: 'Início',        href: '/#inicio'       },
+  { label: 'Sobre',         href: '/#sobre'         },
+  { label: 'Serviços',      href: '/#servicos'      },
+  { label: 'Diferenciais',  href: '/#diferenciais'  },
+  { label: 'Parceiros',     href: '/#parceiros'     },
+  { label: 'Depoimentos',   href: '/#depoimentos'   },
+  { label: 'FAQ',           href: '/faq', isRoute: true },
+  { label: 'Contato',       href: '/#contato'       },
 ]
 
 export default function Footer() {
@@ -80,9 +79,11 @@ export default function Footer() {
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Serviços</h3>
             <ul className={styles.colList}>
-              {SERVICES_LINKS.map(s => (
-                <li key={s}>
-                  <a href="#servicos" className={styles.colLink}>{s}</a>
+              {SOLUTIONS.map(solution => (
+                <li key={solution.id}>
+                  <Link to={getSolutionPath(solution.slug)} className={styles.colLink}>
+                    {solution.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -94,7 +95,11 @@ export default function Footer() {
             <ul className={styles.colList}>
               {QUICK_LINKS.map(l => (
                 <li key={l.href}>
-                  <a href={l.href} className={styles.colLink}>{l.label}</a>
+                  {l.isRoute ? (
+                    <Link to={l.href} className={styles.colLink}>{l.label}</Link>
+                  ) : (
+                    <a href={l.href} className={styles.colLink}>{l.label}</a>
+                  )}
                 </li>
               ))}
             </ul>

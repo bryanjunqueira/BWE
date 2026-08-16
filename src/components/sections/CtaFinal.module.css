@@ -2,9 +2,8 @@
 
 .section {
   position: relative;
-  padding-block: 120px;
+  padding-block: 110px;
   overflow: hidden;
-  text-align: center;
 }
 
 .bg {
@@ -25,15 +24,19 @@
   );
 }
 
-.content {
+.layout {
   position: relative;
   z-index: 10;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
-  max-width: 700px;
-  margin-inline: auto;
+  gap: var(--space-5);
 }
 
 .eyebrow {
@@ -59,25 +62,113 @@
   max-width: 520px;
 }
 
-.actions {
+.contactShortcuts {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  justify-content: center;
-  margin-top: var(--space-4);
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
 }
 
-@media (max-width: 480px) {
+.contactShortcuts a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: rgba(255,255,255,0.78);
+  font-weight: var(--font-weight-semibold);
+  transition: color var(--transition-fast);
+}
+
+.contactShortcuts a:hover {
+  color: var(--white);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form label span {
+  color: var(--blue-900);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--gray-900);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: var(--blue-300);
+  box-shadow: 0 0 0 4px rgba(58, 114, 212, 0.14);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form button {
+  align-self: flex-start;
+}
+
+.status {
+  padding: var(--space-3) var(--space-4);
+  color: var(--blue-900);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
   .section {
     padding-block: 80px;
   }
 
-  .actions {
-    flex-direction: column;
-    width: 100%;
+  .form {
+    padding: var(--space-6);
   }
 
-  .actions .btn {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .form button {
     width: 100%;
     justify-content: center;
   }

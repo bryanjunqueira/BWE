@@ -1,0 +1,294 @@
+.main {
+  background: var(--white);
+}
+
+.hero {
+  position: relative;
+  min-height: 74dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: calc(var(--nav-height) + 52px);
+  padding-bottom: var(--space-20);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(6, 15, 30, 0.92) 0%, rgba(10, 22, 40, 0.82) 52%, rgba(26, 66, 144, 0.68) 100%);
+}
+
+.gridTexture {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.title {
+  max-width: 840px;
+  color: var(--white);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: var(--font-weight-black);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: var(--space-5);
+}
+
+.subtitle {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.heroCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.heroCard {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 16px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.formSection {
+  background: var(--gray-50);
+}
+
+.formLayout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.infoPanel {
+  position: sticky;
+  top: 120px;
+  padding: var(--space-8);
+  background: var(--blue-950);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-blue);
+}
+
+.infoPanel h2 {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.infoPanel p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.infoList div {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.infoList strong,
+.infoList span {
+  display: block;
+}
+
+.infoList strong {
+  margin-bottom: var(--space-1);
+  color: var(--white);
+}
+
+.infoList span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.formCard {
+  padding: var(--space-8);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field span {
+  color: var(--blue-900);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 13px 14px;
+  color: var(--gray-900);
+  background: var(--white);
+  font: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--blue-300);
+  box-shadow: 0 0 0 4px rgba(58, 114, 212, 0.14);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.fullField {
+  margin-top: var(--space-5);
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 160px;
+  margin-top: var(--space-5);
+  padding: var(--space-8);
+  color: var(--blue-900);
+  background: linear-gradient(180deg, var(--blue-50), var(--white));
+  border: 1.5px dashed var(--blue-200);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.uploadBox:hover {
+  border-color: var(--blue-400);
+  background: var(--blue-50);
+}
+
+.uploadBox strong {
+  font-size: 1rem;
+}
+
+.uploadBox span {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+}
+
+.uploadBox input {
+  max-width: 260px;
+  margin-top: var(--space-2);
+  color: var(--gray-600);
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.consent input {
+  margin-top: 5px;
+  accent-color: var(--blue-600);
+}
+
+.status {
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  color: var(--blue-900);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.formCard button {
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 960px) {
+  .formLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .infoPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 44px);
+    padding-bottom: var(--space-16);
+  }
+
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard,
+  .infoPanel {
+    padding: var(--space-6);
+  }
+
+  .formCard button {
+    width: 100%;
+  }
+}
