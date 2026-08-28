@@ -4,6 +4,8 @@ import Hero from '../components/sections/Hero'
 import About from '../components/sections/About'
 import Services from '../components/sections/Services'
 import Differentials from '../components/sections/Differentials'
+import Portfolio from '../components/sections/Portfolio'
+import Equipment from '../components/sections/Equipment'
 import Partners from '../components/sections/Partners'
 import Testimonials from '../components/sections/Testimonials'
 import Location from '../components/sections/Location'
@@ -19,6 +21,8 @@ export default function Home() {
         <About />
         <Services />
         <Differentials />
+        <Portfolio />
+        <Equipment />
         <Partners />
         <Testimonials />
         <Location />

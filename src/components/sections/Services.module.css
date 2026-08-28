@@ -147,6 +147,19 @@
   overflow: hidden;
 }
 
+.itemSlideshow {
+  width: 100%;
+  height: 100%;
+}
+
+.itemSlideshow img {
+  transition: transform 0.5s ease;
+}
+
+.item:hover .itemSlideshow img {
+  transform: scale(1.04);
+}
+
 .itemImage {
   width: 100%;
   height: 100%;
@@ -161,11 +174,13 @@
 .itemImageOverlay {
   position: absolute;
   inset: 0;
+  z-index: 3;
   background: linear-gradient(
     to right,
     rgba(10,22,40,0.15) 0%,
     transparent 60%
   );
+  pointer-events: none;
 }
 
 /* Decorative (no image) */

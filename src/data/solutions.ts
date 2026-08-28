@@ -1,8 +1,23 @@
-import intercomImg from '../assets/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages.jpg'
 import cctvImg from '../assets/cctv-security-camera-ceiling.jpg'
 import fingerprintImg from '../assets/fingerprint.jpg'
 import homeAutomationImg from '../assets/tech-automation.jpg'
 import tabletSmartHomeImg from '../assets/man-using-tablet-his-smart-home.jpg'
+import intercomImg from '../assets/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages.jpg'
+
+// New photos
+import cameraBullet1 from '../assets/camera-bullet-1.png'
+import cameraBullet2 from '../assets/camera-bullet-2.png'
+import speedDome from '../assets/speed-dome.jpeg'
+import speedDomePark from '../assets/speed-dome-park.jpeg'
+import speedDomeStreet from '../assets/speed-dome-street.jpeg'
+import biometria from '../assets/biometria.png'
+import controleFacial1 from '../assets/controle-facial-1.png'
+import controleFacial2 from '../assets/controle-facial-2.png'
+import controleFacial3 from '../assets/controle-facial-3.png'
+import xat2000 from '../assets/xat-2000-lcd.png'
+import casaAutomacao from '../assets/casa-automacao.jpeg'
+import armarioInteligente1 from '../assets/armario-inteligente-1.png'
+import armarioInteligente2 from '../assets/armario-inteligente-2.png'
 
 export type Solution = {
   id: string
@@ -12,6 +27,7 @@ export type Solution = {
   description: string
   detail: string
   image: string
+  images: string[]
   imageAlt: string
   bullets: string[]
   idealFor: string[]
@@ -31,8 +47,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Alarmes',
     description: 'Central de monitoramento que age imediatamente ao menor sinal de anomalia, garantindo resposta rápida em situações de risco.',
     detail: 'Integração com sensores de movimento, abertura de portas e janelas, sirenes e comunicação direta com o responsável pelo imóvel.',
-    image: homeAutomationImg,
-    imageAlt: 'Monitoramento residencial e comercial por dispositivo de automação e segurança',
+    image: xat2000,
+    images: [xat2000, homeAutomationImg],
+    imageAlt: 'Painel de alarme Xat 2000 LCD para monitoramento residencial e comercial',
     bullets: ['Sensores estrategicamente posicionados', 'Alertas e acompanhamento 24 horas', 'Projeto ajustado ao perfil do imóvel'],
     idealFor: ['Residências', 'Comércios', 'Condomínios', 'Empresas'],
     overview: [
@@ -52,8 +69,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Câmeras',
     description: 'Vigilância por câmeras de alta resolução, cobrindo pontos estratégicos do imóvel com imagens nítidas 24 horas por dia.',
     detail: 'Câmeras internas e externas, gravação em nuvem ou local, acesso remoto pelo smartphone e armazenamento seguro das imagens.',
-    image: cctvImg,
-    imageAlt: 'Câmera CFTV dome instalada em teto de ambiente comercial',
+    image: cameraBullet1,
+    images: [cameraBullet1, cameraBullet2, cctvImg, speedDome, speedDomePark, speedDomeStreet],
+    imageAlt: 'Câmeras bullet instaladas para CFTV e vigilância',
     bullets: ['Câmeras internas e externas', 'Acesso remoto pelo celular', 'Gravação local ou em nuvem'],
     idealFor: ['Lojas', 'Galpões', 'Residências', 'Áreas comuns'],
     overview: [
@@ -73,8 +91,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Biometria e digital',
     description: 'Sistemas de controle de entrada que combinam biometria, leitores de proximidade, senhas e integração com portões e cancelas.',
     detail: 'Ideal para empresas, condomínios e residências que precisam registrar e restringir o acesso de pessoas a áreas específicas.',
-    image: fingerprintImg,
-    imageAlt: 'Leitor biométrico de controle de acesso por impressão digital',
+    image: controleFacial1,
+    images: [controleFacial1, controleFacial2, controleFacial3, biometria, fingerprintImg],
+    imageAlt: 'Sistema de controle de acesso facial em portão de condomínio',
     bullets: ['Registro de entrada e saída', 'Acesso por digital, senha ou cartão', 'Restrição por área e perfil'],
     idealFor: ['Empresas', 'Condomínios', 'Portarias', 'Áreas restritas'],
     overview: [
@@ -95,6 +114,7 @@ export const SOLUTIONS: Solution[] = [
     description: 'Substituição ou apoio à portaria presencial com atendimento e liberação de acesso realizado remotamente, com segurança e agilidade.',
     detail: 'Integração com interfone, câmeras e controle de acesso, permitindo identificar e autorizar visitantes de qualquer lugar.',
     image: intercomImg,
+    images: [intercomImg, controleFacial2],
     imageAlt: 'Entregador utilizando interfone com câmera integrada em portão residencial',
     bullets: ['Atendimento remoto de visitantes', 'Integração com câmeras e interfone', 'Mais controle na liberação de acesso'],
     idealFor: ['Condomínios', 'Empresas', 'Portarias', 'Recepções'],
@@ -115,8 +135,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Tecnologia',
     description: 'Desenvolvimento e integração de soluções tecnológicas personalizadas que ampliam a segurança e a eficiência operacional.',
     detail: 'Automação residencial integrada à segurança, dashboards de monitoramento e consultoria técnica para projetos complexos.',
-    image: tabletSmartHomeImg,
-    imageAlt: 'Profissional utilizando tablet para controle de sistema de segurança inteligente',
+    image: casaAutomacao,
+    images: [casaAutomacao, armarioInteligente1, armarioInteligente2, tabletSmartHomeImg],
+    imageAlt: 'Casa com automação residencial integrada a sistema de segurança',
     bullets: ['Integrações sob medida', 'Automação aplicada à segurança', 'Consultoria técnica para projetos'],
     idealFor: ['Projetos especiais', 'Empresas', 'Residências inteligentes', 'Operações complexas'],
     overview: [

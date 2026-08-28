@@ -56,7 +56,6 @@ export default function Differentials() {
         {/* Header */}
         <AnimatedSection className={styles.header}>
           <span className="section-label section-label-light">Por que a BWE</span>
-          <div className="accent-line" />
           <h2 className={styles.heading}>
             O que nos diferencia<br />no mercado
           </h2>

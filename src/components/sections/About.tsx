@@ -1,6 +1,10 @@
 import AnimatedSection from '../ui/AnimatedSection'
+import ImageSlideshow from '../ui/ImageSlideshow'
 import styles from './About.module.css'
-import aboutImg from '../../assets/man-using-tablet-his-smart-home.jpg'
+import aboutImg1 from '../../assets/central-monitoramento.png'
+import aboutImg2 from '../../assets/man-using-tablet-his-smart-home.jpg'
+
+const ABOUT_IMAGES = [aboutImg1, aboutImg2]
 
 export default function About() {
   return (
@@ -11,7 +15,6 @@ export default function About() {
         <div className={styles.textCol}>
           <AnimatedSection>
             <span className="section-label">Quem somos</span>
-            <div className="accent-line" />
             <h2 className={styles.heading}>
               Uma empresa construída<br />sobre confiança e resultado
             </h2>
@@ -67,9 +70,10 @@ export default function About() {
         {/* Image column */}
         <AnimatedSection className={styles.imageCol} delay={150}>
           <div className={styles.imageWrapper}>
-            <img
-              src={aboutImg}
-              alt="Pessoa utilizando painel de segurança residencial"
+            <ImageSlideshow
+              images={ABOUT_IMAGES}
+              alt="Central de monitoramento BWE Monitoramento"
+              interval={6000}
               className={styles.image}
             />
             <div className={styles.imageOverlay} />

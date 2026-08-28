@@ -1,0 +1,76 @@
+/* ImageSlideshow.module.css */
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideActive {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Ken Burns — subtle zoom pan */
+@keyframes kenBurns1 {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1%, -1%); }
+}
+
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.06) translate(1%, -0.5%); }
+}
+
+@keyframes kenBurns3 {
+  0%   { transform: scale(1.04) translate(-0.5%, 0.5%); }
+  100% { transform: scale(1.0) translate(0, 0); }
+}
+
+.kenBurns0 img { animation: kenBurns1 8s ease-in-out forwards; }
+.kenBurns1 img { animation: kenBurns2 8s ease-in-out forwards; }
+.kenBurns2 img { animation: kenBurns3 8s ease-in-out forwards; }
+
+/* Progress dots */
+.dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dotActive {
+  background: rgba(255,255,255,0.95);
+  transform: scale(1.2);
+}

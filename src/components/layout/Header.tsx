@@ -46,12 +46,14 @@ const SOLUCOES_ITEMS = [
 ]
 
 const NAV_LINKS: NavLink[] = [
-  { label: 'Sobre',     href: '#sobre' },
-  { label: 'Soluções',  href: '#servicos', hasDropdown: true },
-  { label: 'Parceiros', href: '#parceiros' },
-  { label: 'Localização', href: '#localizacao' },
-  { label: 'Carreira',  href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
-  { label: 'Contato',   href: '#contato' },
+  { label: 'Sobre',        href: '#sobre' },
+  { label: 'Soluções',     href: '#servicos', hasDropdown: true },
+  { label: 'Projetos',     href: '#projetos' },
+  { label: 'Equipamentos', href: '#equipamentos' },
+  { label: 'Parceiros',    href: '#parceiros' },
+  { label: 'Localização',  href: '#localizacao' },
+  { label: 'Carreira',     href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Contato',      href: '#contato' },
 ]
 
 export default function Header() {

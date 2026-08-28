@@ -15,6 +15,8 @@ const QUICK_LINKS: QuickLink[] = [
   { label: 'Sobre',         href: '/#sobre'         },
   { label: 'Serviços',      href: '/#servicos'      },
   { label: 'Diferenciais',  href: '/#diferenciais'  },
+  { label: 'Projetos',      href: '/#projetos'      },
+  { label: 'Equipamentos',  href: '/#equipamentos'  },
   { label: 'Parceiros',     href: '/#parceiros'     },
   { label: 'Depoimentos',   href: '/#depoimentos'   },
   { label: 'FAQ',           href: '/faq', isRoute: true },
