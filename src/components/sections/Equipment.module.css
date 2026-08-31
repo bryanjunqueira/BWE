@@ -72,6 +72,7 @@
   position: relative;
   height: 220px;
   overflow: hidden;
+  background: #f8fafc;
 }
 
 .cardImage img {
@@ -83,39 +84,6 @@
 
 .card:hover .cardImage img {
   transform: scale(1.05);
-}
-
-.cardBadge {
-  position: absolute;
-  top: var(--space-3);
-  left: var(--space-3);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.6875rem;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  z-index: 2;
-}
-
-.badgeCftv {
-  background: rgba(13,32,69,0.85);
-  color: var(--blue-200);
-}
-
-.badgeAcesso {
-  background: rgba(37,211,102,0.15);
-  color: #1a9b4a;
-}
-
-.badgeAlarme {
-  background: rgba(234,179,8,0.15);
-  color: #b8860b;
-}
-
-.badgeTech {
-  background: rgba(139,92,246,0.15);
-  color: #7c3aed;
 }
 
 .cardBody {
