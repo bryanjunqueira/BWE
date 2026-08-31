@@ -2,7 +2,6 @@
 import cameraBullet1 from '../assets/camera-bullet-1.png'
 import speedDome from '../assets/speed-dome.jpeg'
 import biometria from '../assets/biometria.png'
-import controleFacial1 from '../assets/controle-facial-1.png'
 import controleFacial2 from '../assets/controle-facial-2.png'
 import fingerprint from '../assets/fingerprint.jpg'
 import xat2000 from '../assets/xat-2000-lcd.png'
