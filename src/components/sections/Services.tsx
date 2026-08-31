@@ -1,7 +1,6 @@
 import { Shield, Camera, Fingerprint, MonitorSmartphone, Cpu } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import AnimatedSection from '../ui/AnimatedSection'
-import ImageSlideshow from '../ui/ImageSlideshow'
 import styles from './Services.module.css'
 import { SOLUTIONS, getSolutionPath } from '../../data/solutions'
 
@@ -54,22 +53,21 @@ export default function Services() {
                 </Link>
               </div>
 
-              {/* Image side — slideshow if multiple images */}
-              {service.images && service.images.length > 0 && (
+              {/* Image side — static image */}
+              {service.image && (
                 <div className={styles.itemImageWrapper}>
-                  <ImageSlideshow
-                    images={service.images.slice(0, 3)}
+                  <img
+                    src={service.image}
                     alt={service.imageAlt}
-                    interval={4500 + index * 500}
-                    className={styles.itemSlideshow}
-                    kenBurns={false}
+                    className={styles.itemImage}
+                    loading="lazy"
                   />
                   <div className={styles.itemImageOverlay} />
                 </div>
               )}
 
               {/* No-image decorative side (fallback) */}
-              {(!service.images || service.images.length === 0) && !service.image && (
+              {!service.image && (
                 <div className={styles.itemDecor} aria-hidden="true">
                   <div className={styles.itemDecorIcon}>
                     {ICONS[service.id as keyof typeof ICONS]}

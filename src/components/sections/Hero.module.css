@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-/* Background slideshow */
+/* Static background */
 .bg {
   position: absolute;
   inset: 0;
@@ -18,33 +18,9 @@
   object-fit: cover;
   object-position: center 30%;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  will-change: opacity, transform;
-}
-
-.bgActive {
   opacity: 1;
   z-index: 1;
 }
-
-/* Ken Burns variations */
-@keyframes heroBurns0 {
-  0%   { transform: scale(1.0); }
-  100% { transform: scale(1.08); }
-}
-@keyframes heroBurns1 {
-  0%   { transform: scale(1.04) translate(-1%, 0); }
-  100% { transform: scale(1.0) translate(0, 0); }
-}
-@keyframes heroBurns2 {
-  0%   { transform: scale(1.0) translate(0, 0); }
-  100% { transform: scale(1.06) translate(1%, -1%); }
-}
-
-.bgKenBurns0 { animation: heroBurns0 7s ease-in-out forwards; }
-.bgKenBurns1 { animation: heroBurns1 7s ease-in-out forwards; }
-.bgKenBurns2 { animation: heroBurns2 7s ease-in-out forwards; }
 
 /* Overlay — deep dark blue */
 .overlay {
@@ -55,8 +31,8 @@
     linear-gradient(
       135deg,
       rgba(6,15,30,0.88) 0%,
-      rgba(10,22,40,0.78) 50%,
-      rgba(13,32,69,0.68) 100%
+      rgba(10,22,40,0.80) 50%,
+      rgba(13,32,69,0.72) 100%
     );
 }
 
@@ -68,35 +44,6 @@
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
-}
-
-/* Slide dots */
-.slideDots {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 15;
-  display: flex;
-  gap: 8px;
-}
-
-.slideDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  border: 1.5px solid rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: all 0.35s ease;
-  padding: 0;
-}
-
-.slideDotActive {
-  background: rgba(255,255,255,0.9);
-  border-color: rgba(255,255,255,0.9);
-  transform: scale(1.3);
-  box-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
 /* Content — centered on screen & positioned higher for optimal viewport visibility */
@@ -207,7 +154,6 @@
   color: rgba(255,255,255,0.7);
   cursor: pointer;
   transition: border-color var(--transition-base), color var(--transition-base);
-  animation: bounce 2.5s ease infinite 1.5s;
 }
 
 .scrollIndicator:hover {
@@ -225,11 +171,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(6px); }
 }
 
 /* Mobile */
@@ -255,9 +196,5 @@
 
   .trustDivider {
     display: none;
-  }
-
-  .slideDots {
-    bottom: 70px;
   }
 }

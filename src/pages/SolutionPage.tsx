@@ -6,7 +6,6 @@ import {
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import WhatsAppFloat from '../components/ui/WhatsAppFloat'
-import ImageSlideshow from '../components/ui/ImageSlideshow'
 import { SOLUTIONS } from '../data/solutions'
 import styles from './SolutionPage.module.css'
 
@@ -87,12 +86,11 @@ export default function SolutionPage() {
             </div>
 
             <div className={styles.heroImageWrap}>
-              <ImageSlideshow
-                images={solution.images}
+              <img
+                src={solution.image}
                 alt={solution.imageAlt}
-                interval={5000}
-                showDots={true}
                 className={styles.heroImage}
+                loading="eager"
               />
             </div>
           </div>

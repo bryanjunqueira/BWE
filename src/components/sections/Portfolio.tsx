@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
-import ImageSlideshow from '../ui/ImageSlideshow'
 import styles from './Portfolio.module.css'
 
 import torreMonitoramento1 from '../../assets/torre-monitoramento-1.png'
-import torreMonitoramento2 from '../../assets/torre-monitoramento-2.png'
 import armarioInteligente1 from '../../assets/armario-inteligente-1.png'
-import armarioInteligente2 from '../../assets/armario-inteligente-2.png'
 import centralMonitoramento from '../../assets/central-monitoramento.png'
 import cameraBullet1 from '../../assets/camera-bullet-1.png'
 import controleFacial1 from '../../assets/controle-facial-1.png'
@@ -18,7 +15,7 @@ interface PortfolioItem {
   category: string
   title: string
   description: string
-  images: string[]
+  image: string
   featured?: boolean
 }
 
@@ -28,7 +25,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: 'Monitoramento',
     title: 'Central de monitoramento BWE',
     description: 'Sala operacional com múltiplas telas e atendimento 24h',
-    images: [centralMonitoramento],
+    image: centralMonitoramento,
     featured: true,
   },
   {
@@ -36,7 +33,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: 'CFTV',
     title: 'Torre de monitoramento',
     description: 'Câmeras em poste exclusivo com cobertura 360°',
-    images: [torreMonitoramento1, torreMonitoramento2],
+    image: torreMonitoramento1,
     featured: false,
   },
   {
@@ -44,7 +41,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: 'Tecnologia',
     title: 'Armário inteligente',
     description: 'Solução para recebimento seguro de encomendas',
-    images: [armarioInteligente1, armarioInteligente2],
+    image: armarioInteligente1,
     featured: false,
   },
   {
@@ -52,21 +49,21 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: 'CFTV',
     title: 'Câmeras bullet instaladas',
     description: 'Vigilância externa de alta resolução',
-    images: [cameraBullet1],
+    image: cameraBullet1,
   },
   {
     id: 'facial',
     category: 'Controle de acesso',
     title: 'Reconhecimento facial',
     description: 'Liberação de acesso por identificação facial',
-    images: [controleFacial1],
+    image: controleFacial1,
   },
   {
     id: 'biometria',
     category: 'Controle de acesso',
     title: 'Biometria digital',
     description: 'Acesso por impressão digital em portaria',
-    images: [biometria],
+    image: biometria,
   },
 ]
 
@@ -99,22 +96,12 @@ export default function Portfolio() {
                 className={styles.itemInner}
                 onClick={() => setLightbox(item)}
               >
-                {item.images.length > 1 ? (
-                  <ImageSlideshow
-                    images={item.images}
-                    alt={item.title}
-                    interval={4000}
-                    className={styles.itemSlideshow}
-                    kenBurns={false}
-                  />
-                ) : (
-                  <img
-                    src={item.images[0]}
-                    alt={item.title}
-                    className={styles.itemImg}
-                    loading="lazy"
-                  />
-                )}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.itemImg}
+                  loading="lazy"
+                />
                 <div className={styles.itemOverlay} />
                 <div className={styles.itemLabel}>
                   <span className={styles.itemCategory}>{item.category}</span>
@@ -131,7 +118,7 @@ export default function Portfolio() {
       {lightbox && (
         <div className={styles.lightbox} onClick={() => setLightbox(null)}>
           <img
-            src={lightbox.images[0]}
+            src={lightbox.image}
             alt={lightbox.title}
             className={styles.lightboxImg}
             onClick={e => e.stopPropagation()}

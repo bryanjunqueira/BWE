@@ -3,16 +3,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Equipment.module.css'
 
-import cameraBullet1 from '../../assets/camera-bullet-1.png'
-import cameraBullet2 from '../../assets/camera-bullet-2.png'
+import cameraBullet from '../../assets/camera-bullet-1.png'
 import speedDome from '../../assets/speed-dome.jpeg'
-import speedDomePark from '../../assets/speed-dome-park.jpeg'
-import speedDomeStreet from '../../assets/speed-dome-street.jpeg'
-import controleFacial1 from '../../assets/controle-facial-1.png'
-import controleFacial3 from '../../assets/controle-facial-3.png'
+import controleFacial from '../../assets/controle-facial-1.png'
 import biometria from '../../assets/biometria.png'
 import xat2000 from '../../assets/xat-2000-lcd.png'
-import armarioInteligente1 from '../../assets/armario-inteligente-1.png'
+import armarioInteligente from '../../assets/armario-inteligente-1.png'
+import torreMonitoramento from '../../assets/torre-monitoramento-1.png'
 
 interface EquipmentItem {
   id: string
@@ -24,74 +21,53 @@ interface EquipmentItem {
 
 const EQUIPMENT: EquipmentItem[] = [
   {
-    id: 'bullet-1',
+    id: 'camera-seguranca',
     category: 'cftv',
-    title: 'Câmera Bullet',
-    description: 'Alta resolução para ambientes externos, com visão noturna e resistência a intempéries.',
-    image: cameraBullet1,
+    title: 'Câmera de Segurança',
+    description: 'Câmera Bullet de alta definição para ambientes internos e externos, com visão noturna e carcaça resistente.',
+    image: cameraBullet,
   },
   {
-    id: 'bullet-2',
+    id: 'camera-ptz',
     category: 'cftv',
-    title: 'Câmera Bullet Pro',
-    description: 'Modelo avançado com detecção inteligente e alcance ampliado.',
-    image: cameraBullet2,
-  },
-  {
-    id: 'speed-dome',
-    category: 'cftv',
-    title: 'Speed Dome',
-    description: 'Câmera PTZ com rotação 360°, zoom óptico e acompanhamento automático.',
+    title: 'Câmera Sistema PTZ',
+    description: 'Speed Dome com movimentação 360°, zoom óptico potente e patrulhamento inteligente de áreas.',
     image: speedDome,
   },
   {
-    id: 'speed-dome-park',
-    category: 'cftv',
-    title: 'Speed Dome Park',
-    description: 'Ideal para áreas abertas, estacionamentos e ambientes amplos.',
-    image: speedDomePark,
-  },
-  {
-    id: 'speed-dome-street',
-    category: 'cftv',
-    title: 'Speed Dome Street',
-    description: 'Monitoramento urbano com cobertura de grandes perímetros.',
-    image: speedDomeStreet,
-  },
-  {
-    id: 'facial-1',
+    id: 'controle-facial',
     category: 'acesso',
-    title: 'Controle Facial',
-    description: 'Reconhecimento facial rápido e seguro para liberação de acesso em portões.',
-    image: controleFacial1,
+    title: 'Controle de Acesso Facial',
+    description: 'Reconhecimento facial com alta precisão e rapidez para liberação sem contato físico.',
+    image: controleFacial,
   },
   {
-    id: 'facial-3',
-    category: 'acesso',
-    title: 'Videoporteiro Facial',
-    description: 'Identificação facial com vídeo integrado para portarias e condomínios.',
-    image: controleFacial3,
-  },
-  {
-    id: 'biometria',
+    id: 'leitor-biometrico',
     category: 'acesso',
     title: 'Leitor Biométrico',
-    description: 'Acesso por impressão digital com tela LCD e registro de eventos.',
+    description: 'Identificação por impressão digital com tela informativa e registro detalhado de acessos.',
     image: biometria,
   },
   {
-    id: 'xat-2000',
+    id: 'sistemas-alarme',
     category: 'alarme',
-    title: 'Xat 2000 LCD',
-    description: 'Teclado de alarme com display LCD, ativação por senha e status em tempo real.',
+    title: 'Sistemas de Alarme',
+    description: 'Teclado XAT LCD integrado à central de monitoramento com sensores perimetrais e aviso instantâneo.',
     image: xat2000,
   },
   {
-    id: 'armario',
+    id: 'armario-inteligente',
     category: 'tech',
     title: 'Armário Inteligente',
-    description: 'Solução para recebimento seguro de encomendas em condomínios e empresas.',
-    image: armarioInteligente1,
+    description: 'Locker inteligente para recebimento e retirada segura e autônoma de encomendas.',
+    image: armarioInteligente,
+  },
+  {
+    id: 'torre-vigilancia',
+    category: 'cftv',
+    title: 'Torre de Vigilância',
+    description: 'Torre de monitoramento autônoma para visão panorâmica e segurança de grandes perímetros.',
+    image: torreMonitoramento,
   },
 ]
 

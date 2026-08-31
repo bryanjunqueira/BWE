@@ -1,7 +1,7 @@
 import { Settings, Package, Zap, Wrench, ShieldCheck, Headphones } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Differentials.module.css'
-import bgImg from '../../assets/medium-shot-blurry-woman-indoors.jpg'
+import bgImg from '../../assets/camera-bullet-1.png'
 
 const DIFFS = [
   {

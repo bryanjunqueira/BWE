@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { Mail, MessageCircle, Send } from 'lucide-react'
 import styles from './CtaFinal.module.css'
-import bgImg from '../../assets/cctv-security-camera-ceiling.jpg'
+import bgImg from '../../assets/torre-monitoramento-1.png'
 
 export default function CtaFinal() {
   const [status, setStatus] = useState('')

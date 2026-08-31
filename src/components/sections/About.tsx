@@ -1,10 +1,6 @@
 import AnimatedSection from '../ui/AnimatedSection'
-import ImageSlideshow from '../ui/ImageSlideshow'
 import styles from './About.module.css'
-import aboutImg1 from '../../assets/central-monitoramento.png'
-import aboutImg2 from '../../assets/man-using-tablet-his-smart-home.jpg'
-
-const ABOUT_IMAGES = [aboutImg1, aboutImg2]
+import aboutImg from '../../assets/central-monitoramento.png'
 
 export default function About() {
   return (
@@ -70,11 +66,11 @@ export default function About() {
         {/* Image column */}
         <AnimatedSection className={styles.imageCol} delay={150}>
           <div className={styles.imageWrapper}>
-            <ImageSlideshow
-              images={ABOUT_IMAGES}
+            <img
+              src={aboutImg}
               alt="Central de monitoramento BWE Monitoramento"
-              interval={6000}
               className={styles.image}
+              loading="lazy"
             />
             <div className={styles.imageOverlay} />
             <div className={styles.imageBadge}>
