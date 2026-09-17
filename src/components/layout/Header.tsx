@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   Menu, X, Phone, Mail, MapPin, ChevronDown,
-  Shield, Camera, Fingerprint, MonitorSmartphone, Cpu,
+  Shield, Camera, ScanFace, MonitorSmartphone, Cpu,
   Instagram, Facebook
 } from 'lucide-react'
 import styles from './Header.module.css'
@@ -29,12 +29,12 @@ const SOLUCOES_ITEMS = [
     href: '/solucoes/cameras',
   },
   {
-    title: 'Biometria e digital',
-    icon: <Fingerprint size={18} />,
-    href: '/solucoes/biometria-digital',
+    title: 'Acesso Facial',
+    icon: <ScanFace size={18} />,
+    href: '/solucoes/acesso-facial',
   },
   {
-    title: 'Portaria Remota',
+    title: 'Portaria Remota/Híbrida',
     icon: <MonitorSmartphone size={18} />,
     href: '/solucoes/portaria-remota',
   },

@@ -43,8 +43,9 @@ export default function Footer() {
               />
             </Link>
             <p className={styles.brandDesc}>
-              Segurança eletrônica para residências e empresas em Guarulhos–SP.
-              Monitoramento, CFTV, controle de acesso e soluções sob medida desde 2018.
+              Segurança eletrônica para residências, comércios, condomínios e empresas
+              em São Paulo, Grande São Paulo e Interior. Monitoramento, CFTV, controle
+              de acesso e soluções sob medida desde 2018.
             </p>
             <div className={styles.socials}>
               <a

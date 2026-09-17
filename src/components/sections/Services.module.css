@@ -6,7 +6,7 @@
 
 .header {
   text-align: center;
-  max-width: 600px;
+  max-width: 760px;
   margin-inline: auto;
   margin-bottom: var(--space-16);
 }
@@ -21,10 +21,22 @@
   margin-bottom: var(--space-4);
 }
 
+.subheadingLead {
+  font-size: 1.0625rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--blue-900);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
 .subheading {
   font-size: 1rem;
   color: var(--gray-500);
   line-height: 1.7;
+}
+
+.subheading + .subheading {
+  margin-top: var(--space-3);
 }
 
 /* List */

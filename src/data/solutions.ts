@@ -1,12 +1,15 @@
-// Photos from fotos nova
+// Photos from fotos nova / fotos-enviadas-fim
 import cameraBullet1 from '../assets/camera-bullet-1.png'
 import speedDome from '../assets/speed-dome.jpeg'
-import biometria from '../assets/biometria.png'
-import controleFacial2 from '../assets/controle-facial-2.png'
-import fingerprint from '../assets/fingerprint.jpg'
-import xat2000 from '../assets/xat-2000-lcd.png'
+import xat8000 from '../assets/xat-8000.webp'
+import sistemaAlarme from '../assets/sistema-alarme.webp'
+import leitorFacial from '../assets/leitor-facial.webp'
+import controleFacialNovo from '../assets/controle-facial-novo.webp'
+import catraca1 from '../assets/catraca-1.webp'
+import catraca2 from '../assets/catraca-2.webp'
+import portariaRemotaHibrida from '../assets/portaria-remota-hibrida.webp'
 import casaAutomacao from '../assets/casa-automacao.jpeg'
-import armarioInteligente1 from '../assets/armario-inteligente-1.png'
+import boxInteligente from '../assets/box-inteligente.webp'
 
 export type Solution = {
   id: string
@@ -36,9 +39,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Alarmes',
     description: 'Central de monitoramento que age imediatamente ao menor sinal de anomalia, garantindo resposta rápida em situações de risco.',
     detail: 'Integração com sensores de movimento, abertura de portas e janelas, sirenes e comunicação direta com o responsável pelo imóvel.',
-    image: xat2000,
-    images: [xat2000],
-    imageAlt: 'Painel de alarme Xat 2000 LCD para monitoramento residencial e comercial',
+    image: xat8000,
+    images: [xat8000, sistemaAlarme],
+    imageAlt: 'Teclado de alarme XAT 8000 instalado para monitoramento residencial e comercial',
     bullets: ['Sensores estrategicamente posicionados', 'Alertas e acompanhamento 24 horas', 'Projeto ajustado ao perfil do imóvel'],
     idealFor: ['Residências', 'Comércios', 'Condomínios', 'Empresas'],
     overview: [
@@ -47,7 +50,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     benefits: ['Reduz tempo de resposta em ocorrências', 'Dificulta invasões e ações oportunistas', 'Permite proteção por setores e horários', 'Gera mais tranquilidade para o responsável pelo imóvel'],
     applications: ['Casas e apartamentos', 'Lojas e escritórios', 'Galpões e depósitos', 'Condomínios e áreas comuns'],
-    technical: ['Sensores de presença, abertura e perímetro', 'Sirenes, teclados e controles de acionamento', 'Comunicação com responsáveis pelo imóvel', 'Setorização para ambientes internos e externos'],
+    technical: ['Sensores de presença, abertura e perímetro', 'Teclado XAT 8000, sirenes e controles de acionamento', 'Comunicação com responsáveis pelo imóvel', 'Setorização para ambientes internos e externos'],
     implementation: ['Levantamento dos pontos de risco', 'Definição dos sensores e zonas de proteção', 'Instalação e configuração do sistema', 'Teste de acionamento e orientação de uso'],
     differentiators: ['Projeto sob medida', 'Equipamentos adequados ao ambiente', 'Instalação limpa e planejada', 'Suporte para ajustes e expansão'],
   },
@@ -75,47 +78,47 @@ export const SOLUTIONS: Solution[] = [
   },
   {
     id: 'controle-acesso',
-    slug: 'biometria-digital',
-    title: 'Controle de acesso por biometria e digital',
-    shortTitle: 'Biometria e digital',
-    description: 'Sistemas de controle de entrada que combinam biometria, leitores de proximidade, senhas e integração com portões e cancelas.',
-    detail: 'Ideal para empresas, condomínios e residências que precisam registrar e restringir o acesso de pessoas a áreas específicas.',
-    image: fingerprint,
-    images: [fingerprint, biometria],
-    imageAlt: 'Leitor biométrico de digital para controle de acesso',
-    bullets: ['Registro de entrada e saída', 'Acesso por digital, senha ou cartão', 'Restrição por área e perfil'],
-    idealFor: ['Empresas', 'Condomínios', 'Portarias', 'Áreas restritas'],
+    slug: 'acesso-facial',
+    title: 'Acesso facial',
+    shortTitle: 'Acesso facial',
+    description: 'Tecnologia de reconhecimento facial para controlar entradas e saídas com mais segurança, agilidade e praticidade. O sistema identifica pessoas previamente cadastradas e permite um controle mais eficiente do acesso aos ambientes.',
+    detail: 'Ideal para condomínios, empresas, comércios, escritórios e residências que buscam modernizar sua segurança e ter mais controle sobre a circulação de pessoas.',
+    image: leitorFacial,
+    images: [leitorFacial, controleFacialNovo, catraca1, catraca2],
+    imageAlt: 'Leitor de reconhecimento facial instalado para controle de acesso',
+    bullets: ['Liberação por reconhecimento facial', 'Cadastro prévio das pessoas autorizadas', 'Registro de entradas e saídas'],
+    idealFor: ['Condomínios', 'Empresas', 'Comércios', 'Escritórios', 'Residências'],
     overview: [
-      'O controle de acesso organiza quem entra, quando entra e quais áreas pode acessar. A solução substitui chaves tradicionais por credenciais como digital, senha, cartão, tag ou reconhecimento conforme o projeto.',
-      'A BWE avalia fluxo de pessoas, nível de restrição, quantidade de usuários e pontos críticos para criar uma solução prática, segura e fácil de administrar.',
+      'O acesso facial organiza quem entra, quando entra e quais áreas pode acessar. O leitor identifica pessoas previamente cadastradas e libera a passagem sem chave, cartão ou contato físico, tornando a rotina mais rápida e segura.',
+      'A BWE avalia fluxo de pessoas, nível de restrição, quantidade de usuários e pontos críticos para criar uma solução prática, segura e fácil de administrar — inclusive integrada a catracas, portões e portas.',
     ],
-    benefits: ['Mais controle sobre circulação de pessoas', 'Redução de chaves físicas e cópias não autorizadas', 'Registro de acessos para auditoria', 'Restrição por horários, perfis e ambientes'],
-    applications: ['Portas de empresas', 'Salas restritas', 'Condomínios e portarias', 'Academias, clínicas e escritórios'],
-    technical: ['Leitores biométricos, faciais, tags ou cartões', 'Fechaduras eletromagnéticas e eletroímãs', 'Botoeiras, fontes e controladoras', 'Cadastro, permissões e relatórios de usuários'],
-    implementation: ['Mapeamento dos pontos de acesso', 'Escolha do método de identificação', 'Instalação dos leitores e fechaduras', 'Cadastro inicial e treinamento de operação'],
-    differentiators: ['Configuração adequada ao fluxo real', 'Integração com portões e portas', 'Organização de permissões', 'Expansão para novos pontos de acesso'],
+    benefits: ['Mais controle sobre a circulação de pessoas', 'Fim das chaves físicas e das cópias não autorizadas', 'Registro de acessos para consulta e auditoria', 'Liberação rápida, sem contato e sem filas na entrada'],
+    applications: ['Portarias de condomínios', 'Entradas de empresas e escritórios', 'Comércios e áreas restritas', 'Residências e acessos de garagem'],
+    technical: ['Leitores de reconhecimento facial para uso interno e externo', 'Catracas e torniquetes integrados ao acesso facial', 'Fechaduras eletromagnéticas, eletroímãs e botoeiras', 'Cadastro de usuários, permissões e relatórios de acesso'],
+    implementation: ['Mapeamento dos pontos de acesso', 'Definição dos equipamentos e do fluxo de passagem', 'Instalação dos leitores, catracas e fechaduras', 'Cadastro inicial das pessoas e treinamento de operação'],
+    differentiators: ['Configuração adequada ao fluxo real do local', 'Integração com catracas, portões e portas', 'Organização de permissões por perfil e horário', 'Expansão para novos pontos de acesso'],
   },
   {
     id: 'portaria-remota',
     slug: 'portaria-remota',
-    title: 'Portaria remota',
-    shortTitle: 'Portaria remota',
-    description: 'Substituição ou apoio à portaria presencial com atendimento e liberação de acesso realizado remotamente, com segurança e agilidade.',
-    detail: 'Integração com interfone, câmeras e controle de acesso, permitindo identificar e autorizar visitantes de qualquer lugar.',
-    image: controleFacial2,
-    images: [controleFacial2],
-    imageAlt: 'Controle de acesso para portaria remota em condomínio',
+    title: 'Portaria remota e portaria híbrida',
+    shortTitle: 'Portaria remota/híbrida',
+    description: 'Soluções que substituem ou complementam a portaria presencial, proporcionando atendimento e liberação de acessos de forma remota, com mais segurança, agilidade e eficiência.',
+    detail: 'Integradas a interfones, câmeras e sistemas de controle de acesso, permitem identificar e autorizar moradores, visitantes e prestadores de serviço com praticidade e segurança.',
+    image: portariaRemotaHibrida,
+    images: [portariaRemotaHibrida],
+    imageAlt: 'Central de portaria remota e portaria híbrida atendendo a entrada de um condomínio',
     bullets: ['Atendimento remoto de visitantes', 'Integração com câmeras e interfone', 'Mais controle na liberação de acesso'],
     idealFor: ['Condomínios', 'Empresas', 'Portarias', 'Recepções'],
     overview: [
-      'A portaria remota centraliza o atendimento de visitantes e prestadores, permitindo identificação e liberação de acesso com apoio de câmeras, interfonia e controle eletrônico.',
-      'O objetivo é aumentar o controle de entrada e reduzir vulnerabilidades operacionais, mantendo rastreabilidade e padronização no atendimento.',
+      'A portaria remota centraliza o atendimento de visitantes e prestadores em uma central de operação, permitindo identificação e liberação de acesso com apoio de câmeras, interfonia e controle eletrônico.',
+      'Na portaria híbrida, esse atendimento remoto trabalha em conjunto com a equipe presente no local: a central assume os horários de menor movimento e apoia a portaria física nos momentos de pico, mantendo rastreabilidade e padronização no atendimento.',
     ],
-    benefits: ['Mais controle na entrada de visitantes', 'Redução de falhas humanas na liberação', 'Integração com câmeras e sistemas de acesso', 'Operação mais padronizada e rastreável'],
+    benefits: ['Mais controle na entrada de visitantes e prestadores', 'Redução de falhas humanas na liberação', 'Integração com câmeras e sistemas de acesso', 'Operação mais padronizada e rastreável'],
     applications: ['Condomínios residenciais', 'Empresas com recepção', 'Portarias de acesso restrito', 'Locais com fluxo recorrente de visitantes'],
-    technical: ['Interfonia, câmeras e fechaduras integradas', 'Controle de abertura de portões e portas', 'Comunicação com moradores ou responsáveis', 'Registro e acompanhamento de eventos'],
+    technical: ['Interfonia, câmeras e fechaduras integradas', 'Controle de abertura de portões, cancelas e portas', 'Comunicação com moradores ou responsáveis', 'Registro e acompanhamento de eventos'],
     implementation: ['Diagnóstico da estrutura existente', 'Definição dos pontos de áudio, vídeo e acesso', 'Integração dos equipamentos', 'Testes de fluxo de atendimento e liberação'],
-    differentiators: ['Projeto pensado para o fluxo do local', 'Integração entre imagem, áudio e acesso', 'Mais segurança na triagem', 'Possibilidade de expansão gradual'],
+    differentiators: ['Projeto pensado para o fluxo do local', 'Integração entre imagem, áudio e acesso', 'Modelo remoto ou híbrido conforme a necessidade', 'Possibilidade de expansão gradual'],
   },
   {
     id: 'tecnologia',
@@ -123,23 +126,29 @@ export const SOLUTIONS: Solution[] = [
     title: 'Soluções em tecnologia',
     shortTitle: 'Tecnologia',
     description: 'Desenvolvimento e integração de soluções tecnológicas personalizadas que ampliam a segurança e a eficiência operacional.',
-    detail: 'Automação residencial integrada à segurança, dashboards de monitoramento e consultoria técnica para projetos complexos.',
+    detail: 'Antenas veiculares, torres de vigilância interligadas ao Smart Sampa, vizinhança solidária, armário inteligente e automação integrada à segurança.',
     image: casaAutomacao,
-    images: [casaAutomacao, armarioInteligente1],
+    images: [casaAutomacao, boxInteligente],
     imageAlt: 'Casa com automação residencial integrada a sistema de segurança',
     bullets: ['Integrações sob medida', 'Automação aplicada à segurança', 'Consultoria técnica para projetos'],
     idealFor: ['Projetos especiais', 'Empresas', 'Residências inteligentes', 'Operações complexas'],
     overview: [
       'As soluções em tecnologia conectam segurança eletrônica, automação e controle operacional para criar projetos personalizados. São indicadas quando o cenário exige mais do que equipamentos isolados.',
-      'A BWE atua na integração de sistemas, melhoria de processos e criação de soluções que aumentam controle, eficiência e visibilidade sobre o ambiente protegido.',
+      'A BWE atua na integração de sistemas, melhoria de processos e criação de soluções que aumentam controle, eficiência e visibilidade sobre o ambiente protegido — de antenas veiculares e leitura de placas a torres de vigilância interligadas ao Smart Sampa e projetos de vizinhança solidária.',
     ],
     benefits: ['Integra sistemas que antes funcionavam separados', 'Melhora controle e tomada de decisão', 'Permite automações de rotina e segurança', 'Cria soluções adequadas à operação real do cliente'],
-    applications: ['Residências inteligentes', 'Empresas com múltiplos ambientes', 'Projetos com integração de sistemas', 'Operações que exigem monitoramento centralizado'],
-    technical: ['Automação residencial e corporativa', 'Integração com câmeras, alarmes e controle de acesso', 'Dashboards e recursos de acompanhamento', 'Consultoria para infraestrutura e expansão'],
+    applications: ['Residências inteligentes', 'Empresas com múltiplos ambientes', 'Ruas e condomínios com vizinhança solidária', 'Operações que exigem monitoramento centralizado'],
+    technical: ['Antenas veiculares e leitura automática de placas', 'Torres de vigilância interligadas ao Smart Sampa', 'Armário inteligente para recebimento de encomendas', 'Integração com câmeras, alarmes e controle de acesso'],
     implementation: ['Entendimento do objetivo do projeto', 'Mapeamento dos sistemas existentes', 'Definição da arquitetura de integração', 'Implantação, testes e ajustes operacionais'],
     differentiators: ['Solução pensada de ponta a ponta', 'Integração com foco prático', 'Escalabilidade para novas demandas', 'Acompanhamento técnico especializado'],
   },
 ]
+
+// Slugs antigos mantidos para não quebrar links já divulgados
+export const LEGACY_SLUGS: Record<string, string> = {
+  'biometria-digital': 'acesso-facial',
+  'controle-acesso': 'acesso-facial',
+}
 
 export function getSolutionPath(slug: string) {
   return `/solucoes/${slug}`

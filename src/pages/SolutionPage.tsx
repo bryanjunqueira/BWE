@@ -1,18 +1,18 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import {
-  ArrowRight, Camera, CheckCircle2, Cpu, Fingerprint, Headphones, MessageCircle,
+  ArrowRight, Camera, CheckCircle2, Cpu, ScanFace, Headphones, MessageCircle,
   MonitorSmartphone, Phone, Shield, ShieldCheck, Wrench, ClipboardCheck,
 } from 'lucide-react'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import WhatsAppFloat from '../components/ui/WhatsAppFloat'
-import { SOLUTIONS } from '../data/solutions'
+import { SOLUTIONS, LEGACY_SLUGS, getSolutionPath } from '../data/solutions'
 import styles from './SolutionPage.module.css'
 
 const ICONS = {
   monitoramento: <Shield size={26} />,
   cftv: <Camera size={26} />,
-  'controle-acesso': <Fingerprint size={26} />,
+  'controle-acesso': <ScanFace size={26} />,
   'portaria-remota': <MonitorSmartphone size={26} />,
   tecnologia: <Cpu size={26} />,
 }
@@ -53,6 +53,11 @@ const INFO_CARDS = [
 export default function SolutionPage() {
   const { slug } = useParams()
   const solution = SOLUTIONS.find(item => item.slug === slug)
+
+  // Redireciona slugs antigos (ex.: /solucoes/biometria-digital) para o novo endereço
+  if (!solution && slug && LEGACY_SLUGS[slug]) {
+    return <Navigate to={getSolutionPath(LEGACY_SLUGS[slug])} replace />
+  }
 
   if (!solution) return <Navigate to="/" replace />
 

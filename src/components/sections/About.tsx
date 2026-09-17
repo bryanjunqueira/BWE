@@ -12,23 +12,28 @@ export default function About() {
           <AnimatedSection>
             <span className="section-label">Quem somos</span>
             <h2 className={styles.heading}>
-              Uma empresa construída<br />sobre confiança e resultado
+              Uma empresa construída sobre<br />confiança, tecnologia e segurança
             </h2>
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
             <p className={styles.leadText}>
-              Desde 2018, a BWE Monitoramento se dedica a fornecer segurança
-              eletrônica de alto nível para residências e empresas em Guarulhos
-              e região.
+              Desde 2018, a BWE INOVE atua no desenvolvimento e na implementação de
+              soluções em segurança eletrônica para residências, comércios, condomínios,
+              escritórios e empresas em São Paulo, Grande São Paulo e Interior.
             </p>
 
             <p className={styles.bodyText}>
-              Nossa expertise consolida-se através de um leque abrangente de
-              serviços essenciais: monitoramento de alarmes, vigilância por CFTV
-              (sistema de câmeras), sistemas robustos de controle de acesso,
-              eficiência operacional com portaria remota e desenvolvimento de
-              soluções em tecnologia que garantem sua tranquilidade e controle total.
+              Ao longo dos anos, construímos nossa experiência oferecendo soluções
+              completas e personalizadas, que unem tecnologia, eficiência e segurança
+              para atender às diferentes necessidades de cada cliente.
+            </p>
+
+            <p className={styles.bodyText}>
+              Nosso portfólio inclui monitoramento de alarmes 24 horas, CFTV, controle
+              de acesso, catracas, antenas veiculares, portaria remota, portaria híbrida,
+              torres de vigilância interligadas ao Smart Sampa, vizinhança solidária e
+              outras soluções em segurança eletrônica.
             </p>
           </AnimatedSection>
 

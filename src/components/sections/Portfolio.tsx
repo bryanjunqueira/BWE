@@ -3,12 +3,12 @@ import { X } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Portfolio.module.css'
 
-import torreMonitoramento1 from '../../assets/torre-monitoramento-1.png'
-import armarioInteligente1 from '../../assets/armario-inteligente-1.png'
+import torreVigilancia2 from '../../assets/torre-vigilancia-2.webp'
+import boxInteligente from '../../assets/box-inteligente.webp'
 import centralMonitoramento from '../../assets/central-monitoramento.png'
 import cameraBullet1 from '../../assets/camera-bullet-1.png'
-import controleFacial1 from '../../assets/controle-facial-1.png'
-import biometria from '../../assets/biometria.png'
+import controleFacialNovo from '../../assets/controle-facial-novo.webp'
+import leitorPlacas from '../../assets/leitor-placas.webp'
 
 interface PortfolioItem {
   id: string
@@ -31,9 +31,9 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'torre',
     category: 'CFTV',
-    title: 'Torre de monitoramento',
-    description: 'Câmeras em poste exclusivo com cobertura 360°',
-    image: torreMonitoramento1,
+    title: 'Torre de vigilância',
+    description: 'Câmeras em poste exclusivo, com opção de integração ao Smart Sampa',
+    image: torreVigilancia2,
     featured: false,
   },
   {
@@ -41,7 +41,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     category: 'Tecnologia',
     title: 'Armário inteligente',
     description: 'Solução para recebimento seguro de encomendas',
-    image: armarioInteligente1,
+    image: boxInteligente,
     featured: false,
   },
   {
@@ -54,16 +54,16 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'facial',
     category: 'Controle de acesso',
-    title: 'Reconhecimento facial',
-    description: 'Liberação de acesso por identificação facial',
-    image: controleFacial1,
+    title: 'Acesso facial',
+    description: 'Liberação de acesso por reconhecimento facial na portaria',
+    image: controleFacialNovo,
   },
   {
-    id: 'biometria',
-    category: 'Controle de acesso',
-    title: 'Biometria digital',
-    description: 'Acesso por impressão digital em portaria',
-    image: biometria,
+    id: 'leitor-placas',
+    category: 'Tecnologia',
+    title: 'Leitor de placas',
+    description: 'Identificação automática de veículos na entrada',
+    image: leitorPlacas,
   },
 ]
 
@@ -81,7 +81,7 @@ export default function Portfolio() {
           </h2>
           <p className={styles.subheading}>
             Projetos reais de segurança eletrônica, automação e monitoramento
-            executados pela nossa equipe em Guarulhos e região.
+            executados pela nossa equipe em São Paulo, Grande São Paulo e Interior.
           </p>
         </AnimatedSection>
 
