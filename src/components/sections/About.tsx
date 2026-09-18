@@ -1,6 +1,6 @@
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './About.module.css'
-import aboutImg from '../../assets/central-monitoramento.png'
+import aboutImg from '../../assets/central-monitoramento.webp'
 
 export default function About() {
   return (

@@ -88,9 +88,15 @@
   color: rgba(255,255,255,0.85);
   line-height: 1.65;
   max-width: 780px;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
   font-weight: var(--font-weight-regular);
   animation: fadeSlideUp 0.7s ease 0.2s both;
+}
+
+/* Último parágrafo antes dos botões mantém o respiro original */
+.subheading:last-of-type {
+  margin-bottom: var(--space-6);
+  animation-delay: 0.28s;
 }
 
 /* Actions — centered */

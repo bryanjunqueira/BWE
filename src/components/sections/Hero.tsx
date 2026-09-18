@@ -1,6 +1,6 @@
 import { MessageCircle, FileText, ChevronDown } from 'lucide-react'
 import styles from './Hero.module.css'
-import heroBg from '../../assets/torre-monitoramento-1.png'
+import heroBg from '../../assets/torre-vigilancia-2.webp'
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -40,8 +40,16 @@ export default function Hero() {
           </h1>
 
           <p className={styles.subheading}>
-            Monitoramento, CFTV, controle de acesso e soluções em segurança eletrônica
-            para residências e empresas — com atendimento ágil e projetos sob medida.
+            Proteção, tecnologia e tranquilidade para todos os ambientes. Oferecemos
+            soluções completas em segurança eletrônica, incluindo sistemas de alarme,
+            monitoramento 24/7, controle de acesso, catracas, antenas veiculares,
+            portaria remota e portaria híbrida.
+          </p>
+
+          <p className={styles.subheading}>
+            Atendemos residências, comércios, escritórios, empresas, condomínios e
+            shoppings, com soluções personalizadas para cada necessidade, proporcionando
+            mais segurança, controle e praticidade no dia a dia.
           </p>
 
           <div className={styles.actions}>

@@ -3,12 +3,14 @@ import { X } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Portfolio.module.css'
 
-import torreVigilancia2 from '../../assets/torre-vigilancia-2.webp'
-import boxInteligente from '../../assets/box-inteligente.webp'
-import centralMonitoramento from '../../assets/central-monitoramento.png'
-import cameraBullet1 from '../../assets/camera-bullet-1.png'
-import controleFacialNovo from '../../assets/controle-facial-novo.webp'
-import leitorPlacas from '../../assets/leitor-placas.webp'
+// Fotos da pasta "fotos site" — nenhuma delas se repete em outra seção
+import armarioInteligente1 from '../../assets/armario-inteligente-1.webp'
+import speedDomePark from '../../assets/speed-dome-park.webp'
+import cameraBullet2 from '../../assets/camera-bullet-2.webp'
+import speedDomeStreet from '../../assets/speed-dome-street.webp'
+import xat2000 from '../../assets/xat-2000-lcd.webp'
+import speedDome from '../../assets/speed-dome.webp'
+import casaAutomacao from '../../assets/casa-automacao.webp'
 
 interface PortfolioItem {
   id: string
@@ -21,49 +23,55 @@ interface PortfolioItem {
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 'central',
-    category: 'Monitoramento',
-    title: 'Central de monitoramento BWE',
-    description: 'Sala operacional com múltiplas telas e atendimento 24h',
-    image: centralMonitoramento,
+    id: 'armario-condominio',
+    category: 'Tecnologia',
+    title: 'Armário inteligente em condomínio',
+    description: 'Locker instalado no hall para recebimento autônomo de encomendas',
+    image: armarioInteligente1,
     featured: true,
   },
   {
-    id: 'torre',
+    id: 'speed-dome-park',
     category: 'CFTV',
-    title: 'Torre de vigilância',
-    description: 'Câmeras em poste exclusivo, com opção de integração ao Smart Sampa',
-    image: torreVigilancia2,
-    featured: false,
+    title: 'Speed Dome em área externa',
+    description: 'Monitoramento de perímetro aberto com zoom óptico e giro 360°',
+    image: speedDomePark,
+    featured: true,
   },
   {
-    id: 'armario',
-    category: 'Tecnologia',
-    title: 'Armário inteligente',
-    description: 'Solução para recebimento seguro de encomendas',
-    image: boxInteligente,
-    featured: false,
-  },
-  {
-    id: 'cameras',
+    id: 'cameras-bullet',
     category: 'CFTV',
     title: 'Câmeras bullet instaladas',
-    description: 'Vigilância externa de alta resolução',
-    image: cameraBullet1,
+    description: 'Duplo ponto de vigilância externa com caixa de passagem organizada',
+    image: cameraBullet2,
   },
   {
-    id: 'facial',
-    category: 'Controle de acesso',
-    title: 'Acesso facial',
-    description: 'Liberação de acesso por reconhecimento facial na portaria',
-    image: controleFacialNovo,
+    id: 'speed-dome-street',
+    category: 'CFTV',
+    title: 'Speed Dome em fachada',
+    description: 'Câmera PTZ em braço alto para cobrir toda a frente do imóvel',
+    image: speedDomeStreet,
   },
   {
-    id: 'leitor-placas',
+    id: 'alarme-residencial',
+    category: 'Alarmes',
+    title: 'Central de alarme residencial',
+    description: 'Teclado LCD para ativação por setor, integrado ao monitoramento 24h',
+    image: xat2000,
+  },
+  {
+    id: 'speed-dome-comercio',
+    category: 'CFTV',
+    title: 'Câmera dome em comércio',
+    description: 'Cobertura de entrada e circulação com câmera dome discreta',
+    image: speedDome,
+  },
+  {
+    id: 'automacao-residencial',
     category: 'Tecnologia',
-    title: 'Leitor de placas',
-    description: 'Identificação automática de veículos na entrada',
-    image: leitorPlacas,
+    title: 'Automação residencial',
+    description: 'Casa com automação integrada ao sistema de segurança',
+    image: casaAutomacao,
   },
 ]
 

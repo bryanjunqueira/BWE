@@ -1,15 +1,9 @@
-// Photos from fotos nova / fotos-enviadas-fim
-import cameraBullet1 from '../assets/camera-bullet-1.png'
-import speedDome from '../assets/speed-dome.jpeg'
+// Uma foto por solução — nenhuma se repete em outra seção do site
 import xat8000 from '../assets/xat-8000.webp'
-import sistemaAlarme from '../assets/sistema-alarme.webp'
-import leitorFacial from '../assets/leitor-facial.webp'
-import controleFacialNovo from '../assets/controle-facial-novo.webp'
-import catraca1 from '../assets/catraca-1.webp'
-import catraca2 from '../assets/catraca-2.webp'
+import torreMonitoramento from '../assets/torre-monitoramento-1.webp'
+import controleFacial2 from '../assets/controle-facial-2.webp'
 import portariaRemotaHibrida from '../assets/portaria-remota-hibrida.webp'
-import casaAutomacao from '../assets/casa-automacao.jpeg'
-import boxInteligente from '../assets/box-inteligente.webp'
+import leitorPlacas from '../assets/leitor-placas.webp'
 
 export type Solution = {
   id: string
@@ -40,7 +34,7 @@ export const SOLUTIONS: Solution[] = [
     description: 'Central de monitoramento que age imediatamente ao menor sinal de anomalia, garantindo resposta rápida em situações de risco.',
     detail: 'Integração com sensores de movimento, abertura de portas e janelas, sirenes e comunicação direta com o responsável pelo imóvel.',
     image: xat8000,
-    images: [xat8000, sistemaAlarme],
+    images: [xat8000],
     imageAlt: 'Teclado de alarme XAT 8000 instalado para monitoramento residencial e comercial',
     bullets: ['Sensores estrategicamente posicionados', 'Alertas e acompanhamento 24 horas', 'Projeto ajustado ao perfil do imóvel'],
     idealFor: ['Residências', 'Comércios', 'Condomínios', 'Empresas'],
@@ -61,9 +55,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Câmeras',
     description: 'Vigilância por câmeras de alta resolução, cobrindo pontos estratégicos do imóvel com imagens nítidas 24 horas por dia.',
     detail: 'Câmeras internas e externas, gravação em nuvem ou local, acesso remoto pelo smartphone e armazenamento seguro das imagens.',
-    image: cameraBullet1,
-    images: [cameraBullet1, speedDome],
-    imageAlt: 'Câmeras bullet instaladas para CFTV e vigilância',
+    image: torreMonitoramento,
+    images: [torreMonitoramento],
+    imageAlt: 'Torre de monitoramento com câmeras em poste exclusivo na entrada do imóvel',
     bullets: ['Câmeras internas e externas', 'Acesso remoto pelo celular', 'Gravação local ou em nuvem'],
     idealFor: ['Lojas', 'Galpões', 'Residências', 'Áreas comuns'],
     overview: [
@@ -83,9 +77,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Acesso facial',
     description: 'Tecnologia de reconhecimento facial para controlar entradas e saídas com mais segurança, agilidade e praticidade. O sistema identifica pessoas previamente cadastradas e permite um controle mais eficiente do acesso aos ambientes.',
     detail: 'Ideal para condomínios, empresas, comércios, escritórios e residências que buscam modernizar sua segurança e ter mais controle sobre a circulação de pessoas.',
-    image: leitorFacial,
-    images: [leitorFacial, controleFacialNovo, catraca1, catraca2],
-    imageAlt: 'Leitor de reconhecimento facial instalado para controle de acesso',
+    image: controleFacial2,
+    images: [controleFacial2],
+    imageAlt: 'Leitor de reconhecimento facial liberando o acesso no portão de um condomínio',
     bullets: ['Liberação por reconhecimento facial', 'Cadastro prévio das pessoas autorizadas', 'Registro de entradas e saídas'],
     idealFor: ['Condomínios', 'Empresas', 'Comércios', 'Escritórios', 'Residências'],
     overview: [
@@ -127,9 +121,9 @@ export const SOLUTIONS: Solution[] = [
     shortTitle: 'Tecnologia',
     description: 'Desenvolvimento e integração de soluções tecnológicas personalizadas que ampliam a segurança e a eficiência operacional.',
     detail: 'Antenas veiculares, torres de vigilância interligadas ao Smart Sampa, vizinhança solidária, armário inteligente e automação integrada à segurança.',
-    image: casaAutomacao,
-    images: [casaAutomacao, boxInteligente],
-    imageAlt: 'Casa com automação residencial integrada a sistema de segurança',
+    image: leitorPlacas,
+    images: [leitorPlacas],
+    imageAlt: 'Leitura automática de placa de veículo na entrada do imóvel',
     bullets: ['Integrações sob medida', 'Automação aplicada à segurança', 'Consultoria técnica para projetos'],
     idealFor: ['Projetos especiais', 'Empresas', 'Residências inteligentes', 'Operações complexas'],
     overview: [
