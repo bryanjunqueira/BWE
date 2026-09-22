@@ -82,10 +82,10 @@ export default function Portfolio() {
     <section id="projetos" className={styles.section}>
       <div className="container">
         <AnimatedSection className={styles.header}>
-          <span className="section-label section-label-light">Nossos projetos</span>
+          <span className="section-label section-label-light">Projetos</span>
           <div className="accent-line" />
           <h2 className={styles.heading}>
-            Conheça trabalhos<br />realizados pela BWE
+            Conheça nossos<br />projetos
           </h2>
           <p className={styles.subheading}>
             Projetos reais de segurança eletrônica, automação e monitoramento

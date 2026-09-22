@@ -35,21 +35,14 @@ export default function Hero() {
         <div className={styles.contentInner}>
 
           <h1 className={styles.heading}>
-            Segurança inteligente<br />
-            <span className={styles.headingAccent}>para proteger o que importa</span>
+            Proteção, tecnologia e tranquilidade<br />
+            <span className={styles.headingAccent}>para o seu patrimônio</span>
           </h1>
 
           <p className={styles.subheading}>
-            Proteção, tecnologia e tranquilidade para todos os ambientes. Oferecemos
-            soluções completas em segurança eletrônica, incluindo sistemas de alarme,
-            monitoramento 24/7, controle de acesso, catracas, antenas veiculares,
-            portaria remota e portaria híbrida.
-          </p>
-
-          <p className={styles.subheading}>
-            Atendemos residências, comércios, escritórios, empresas, condomínios e
-            shoppings, com soluções personalizadas para cada necessidade, proporcionando
-            mais segurança, controle e praticidade no dia a dia.
+            Sistemas inteligentes e sob medida para proteger o que mais importa,
+            garantindo gestão eficiente, resposta rápida e total controle para
+            residências, comércios, empresas e condomínios.
           </p>
 
           <div className={styles.actions}>

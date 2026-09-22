@@ -29,7 +29,7 @@ const EQUIPMENT: EquipmentItem[] = [
   },
   {
     id: 'camera-speed-dome',
-    title: 'Câmera Speed Dome Ambientada',
+    title: 'Câmera Speed Dome',
     description: 'Speed Dome com movimentação 360°, zoom óptico potente e patrulhamento inteligente de áreas.',
     image: speedDome,
   },
@@ -47,7 +47,7 @@ const EQUIPMENT: EquipmentItem[] = [
   },
   {
     id: 'armario-inteligente',
-    title: 'Armário Inteligente',
+    title: 'Box Inteligente',
     description: 'Locker inteligente instalado na portaria para recebimento e retirada de encomendas de forma segura e autônoma.',
     image: boxInteligente,
   },

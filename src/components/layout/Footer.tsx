@@ -8,19 +8,23 @@ type QuickLink = {
   label: string
   href: string
   isRoute?: boolean
+  isExternal?: boolean
 }
 
+// Ordem acompanha a sequência das seções na home
 const QUICK_LINKS: QuickLink[] = [
-  { label: 'Início',        href: '/#inicio'       },
-  { label: 'Sobre',         href: '/#sobre'         },
-  { label: 'Serviços',      href: '/#servicos'      },
-  { label: 'Diferenciais',  href: '/#diferenciais'  },
-  { label: 'Projetos',      href: '/#projetos'      },
-  { label: 'Equipamentos',  href: '/#equipamentos'  },
-  { label: 'Parceiros',     href: '/#parceiros'     },
-  { label: 'Depoimentos',   href: '/#depoimentos'   },
-  { label: 'FAQ',           href: '/faq', isRoute: true },
-  { label: 'Contato',       href: '/#contato'       },
+  { label: 'Início',           href: '/#inicio'       },
+  { label: 'Projetos',         href: '/#projetos'      },
+  { label: 'Serviços',         href: '/#servicos'      },
+  { label: 'Diferenciais',     href: '/#diferenciais'  },
+  { label: 'Sobre',            href: '/#sobre'         },
+  { label: 'Equipamentos',     href: '/#equipamentos'  },
+  { label: 'Parceiros',        href: '/#parceiros'     },
+  { label: 'Depoimentos',      href: '/#depoimentos'   },
+  { label: 'Loja',             href: 'https://wemonitoramento.com.br/home/', isExternal: true },
+  { label: 'Trabalhe Conosco', href: '/carreira', isRoute: true },
+  { label: 'FAQ',              href: '/faq', isRoute: true },
+  { label: 'Contato',          href: '/#contato'       },
 ]
 
 export default function Footer() {
@@ -58,7 +62,7 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://www.facebook.com/BWEInove"
+                href="https://www.facebook.com/share/19jxpxq6g3/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
@@ -98,7 +102,16 @@ export default function Footer() {
             <ul className={styles.colList}>
               {QUICK_LINKS.map(l => (
                 <li key={l.href}>
-                  {l.isRoute ? (
+                  {l.isExternal ? (
+                    <a
+                      href={l.href}
+                      className={styles.colLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {l.label}
+                    </a>
+                  ) : l.isRoute ? (
                     <Link to={l.href} className={styles.colLink}>{l.label}</Link>
                   ) : (
                     <a href={l.href} className={styles.colLink}>{l.label}</a>

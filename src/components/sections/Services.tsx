@@ -1,4 +1,4 @@
-import { Shield, Camera, ScanFace, MonitorSmartphone, Cpu } from 'lucide-react'
+import { Shield, Camera, ScanFace, MonitorSmartphone, BrainCircuit } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Services.module.css'
@@ -9,7 +9,7 @@ const ICONS = {
   cftv: <Camera size={26} />,
   'controle-acesso': <ScanFace size={26} />,
   'portaria-remota': <MonitorSmartphone size={26} />,
-  tecnologia: <Cpu size={26} />,
+  tecnologia: <BrainCircuit size={26} />,
 }
 
 export default function Services() {
@@ -59,6 +59,7 @@ export default function Services() {
                     src={service.image}
                     alt={service.imageAlt}
                     className={styles.itemImage}
+                    style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
                     loading="lazy"
                   />
                   <div className={styles.itemImageOverlay} />

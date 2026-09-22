@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   Menu, X, Phone, Mail, MapPin, ChevronDown,
-  Shield, Camera, ScanFace, MonitorSmartphone, Cpu,
+  Shield, Camera, ScanFace, MonitorSmartphone, BrainCircuit,
   Instagram, Facebook
 } from 'lucide-react'
 import styles from './Header.module.css'
@@ -13,6 +13,8 @@ type NavLink = {
   href: string
   hasDropdown?: boolean
   isRoute?: boolean
+  /** Link para fora do site (ex.: loja) — abre a URL absoluta, sem rolagem/rota interna */
+  isExternal?: boolean
   target?: '_blank'
   rel?: string
 }
@@ -39,20 +41,22 @@ const SOLUCOES_ITEMS = [
     href: '/solucoes/portaria-remota',
   },
   {
-    title: 'Tecnologia',
-    icon: <Cpu size={18} />,
+    title: 'Inteligência Artificial',
+    icon: <BrainCircuit size={18} />,
     href: '/solucoes/tecnologia',
   },
 ]
 
+// Ordem acompanha a sequência das seções na home
 const NAV_LINKS: NavLink[] = [
-  { label: 'Sobre',        href: '#sobre' },
-  { label: 'Soluções',     href: '#servicos', hasDropdown: true },
   { label: 'Projetos',     href: '#projetos' },
+  { label: 'Soluções',     href: '#servicos', hasDropdown: true },
+  { label: 'Sobre',        href: '#sobre' },
   { label: 'Equipamentos', href: '#equipamentos' },
   { label: 'Parceiros',    href: '#parceiros' },
   { label: 'Localização',  href: '#localizacao' },
-  { label: 'Carreira',     href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Loja',         href: 'https://wemonitoramento.com.br/home/', isRoute: false, isExternal: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Trabalhe Conosco', href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
   { label: 'Contato',      href: '#contato' },
 ]
 
@@ -93,7 +97,7 @@ export default function Header() {
 
   // Active section tracking
   useEffect(() => {
-    const ids = NAV_LINKS.filter(l => !l.isRoute).map(l => l.href.replace('#', ''))
+    const ids = NAV_LINKS.filter(l => !l.isRoute && !l.isExternal).map(l => l.href.replace('#', ''))
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -196,7 +200,7 @@ export default function Header() {
                 <Instagram size={14} />
               </a>
               <a
-                href="https://www.facebook.com/BWEInove"
+                href="https://www.facebook.com/share/19jxpxq6g3/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -229,7 +233,21 @@ export default function Header() {
               const isSolucoes = link.hasDropdown
               const isActive = link.isRoute
                 ? location.pathname === link.href
-                : isHome && activeSection === link.href.replace('#', '')
+                : !link.isExternal && isHome && activeSection === link.href.replace('#', '')
+
+              if (link.isExternal) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={styles.navLink}
+                    target={link.target}
+                    rel={link.rel}
+                  >
+                    {link.label}
+                  </a>
+                )
+              }
 
               if (isSolucoes) {
                 return (
@@ -373,7 +391,17 @@ export default function Header() {
         <ul className={styles.mobileLinks}>
           {NAV_LINKS.map(link => (
             <li key={link.href}>
-              {link.isRoute ? (
+              {link.isExternal ? (
+                <a
+                  href={link.href}
+                  className={styles.mobileLink}
+                  target={link.target}
+                  rel={link.rel}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : link.isRoute ? (
                 <Link
                   to={link.href}
                   className={`${styles.mobileLink} ${location.pathname === link.href ? styles.mobileLinkActive : ''}`}

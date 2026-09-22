@@ -15,6 +15,11 @@ export type Solution = {
   image: string
   images: string[]
   imageAlt: string
+  /**
+   * Ponto de foco do recorte (object-position). Fotos verticais em caixas baixas
+   * são cortadas pelo centro; aqui definimos o que não pode sumir no corte.
+   */
+  imagePosition?: string
   bullets: string[]
   idealFor: string[]
   overview: string[]
@@ -58,6 +63,8 @@ export const SOLUTIONS: Solution[] = [
     image: torreMonitoramento,
     images: [torreMonitoramento],
     imageAlt: 'Torre de monitoramento com câmeras em poste exclusivo na entrada do imóvel',
+    // Foto vertical: sem isso o corte mobile esconde as câmeras no topo do poste
+    imagePosition: 'center 18%',
     bullets: ['Câmeras internas e externas', 'Acesso remoto pelo celular', 'Gravação local ou em nuvem'],
     idealFor: ['Lojas', 'Galpões', 'Residências', 'Áreas comuns'],
     overview: [
@@ -117,24 +124,24 @@ export const SOLUTIONS: Solution[] = [
   {
     id: 'tecnologia',
     slug: 'tecnologia',
-    title: 'Soluções em tecnologia',
-    shortTitle: 'Tecnologia',
-    description: 'Desenvolvimento e integração de soluções tecnológicas personalizadas que ampliam a segurança e a eficiência operacional.',
-    detail: 'Antenas veiculares, torres de vigilância interligadas ao Smart Sampa, vizinhança solidária, armário inteligente e automação integrada à segurança.',
+    title: 'Inteligência Artificial Aplicada à Segurança',
+    shortTitle: 'Inteligência Artificial',
+    description: 'Desenvolvemos softwares com Inteligência Artificial para análise de vídeo em tempo real, realizando leitura de placas, detecção de invasões e monitoramento de áreas de risco.',
+    detail: 'Nossa tecnologia atua integrada a alarmes, monitoramento 24h, portarias remotas e híbridas, catracas, antenas veiculares, armários inteligentes e torres de vigilância conectadas ao Smart Sampa e à vizinhança solidária.',
     image: leitorPlacas,
     images: [leitorPlacas],
-    imageAlt: 'Leitura automática de placa de veículo na entrada do imóvel',
-    bullets: ['Integrações sob medida', 'Automação aplicada à segurança', 'Consultoria técnica para projetos'],
-    idealFor: ['Projetos especiais', 'Empresas', 'Residências inteligentes', 'Operações complexas'],
+    imageAlt: 'Leitura automática de placa de veículo por inteligência artificial na entrada do imóvel',
+    bullets: ['Análise de vídeo em tempo real', 'Leitura automática de placas', 'Detecção de invasão e áreas de risco'],
+    idealFor: ['Condomínios', 'Empresas', 'Indústrias', 'Operações com grande perímetro'],
     overview: [
-      'As soluções em tecnologia conectam segurança eletrônica, automação e controle operacional para criar projetos personalizados. São indicadas quando o cenário exige mais do que equipamentos isolados.',
-      'A BWE atua na integração de sistemas, melhoria de processos e criação de soluções que aumentam controle, eficiência e visibilidade sobre o ambiente protegido — de antenas veiculares e leitura de placas a torres de vigilância interligadas ao Smart Sampa e projetos de vizinhança solidária.',
+      'A BWE desenvolve softwares com Inteligência Artificial que analisam as imagens das câmeras em tempo real. Em vez de depender apenas da observação humana, o sistema interpreta o que acontece na cena e gera alertas no momento em que o evento ocorre.',
+      'Entre as aplicações estão a leitura automática de placas, a detecção de invasão de perímetro e o monitoramento de áreas de risco. Tudo isso trabalha integrado aos demais sistemas: alarmes, monitoramento 24h, portarias remotas e híbridas, catracas, antenas veiculares, armários inteligentes e torres de vigilância conectadas ao Smart Sampa e à vizinhança solidária.',
     ],
-    benefits: ['Integra sistemas que antes funcionavam separados', 'Melhora controle e tomada de decisão', 'Permite automações de rotina e segurança', 'Cria soluções adequadas à operação real do cliente'],
-    applications: ['Residências inteligentes', 'Empresas com múltiplos ambientes', 'Ruas e condomínios com vizinhança solidária', 'Operações que exigem monitoramento centralizado'],
-    technical: ['Antenas veiculares e leitura automática de placas', 'Torres de vigilância interligadas ao Smart Sampa', 'Armário inteligente para recebimento de encomendas', 'Integração com câmeras, alarmes e controle de acesso'],
-    implementation: ['Entendimento do objetivo do projeto', 'Mapeamento dos sistemas existentes', 'Definição da arquitetura de integração', 'Implantação, testes e ajustes operacionais'],
-    differentiators: ['Solução pensada de ponta a ponta', 'Integração com foco prático', 'Escalabilidade para novas demandas', 'Acompanhamento técnico especializado'],
+    benefits: ['Alerta no momento em que o evento acontece', 'Menos dependência da observação humana contínua', 'Reduz alarmes falsos com análise de contexto', 'Gera dados e histórico para tomada de decisão'],
+    applications: ['Leitura de placas em entradas e cancelas', 'Detecção de invasão de perímetro', 'Monitoramento de áreas de risco e acesso restrito', 'Contagem e controle de fluxo de pessoas e veículos'],
+    technical: ['Análise de vídeo em tempo real por IA', 'Leitura automática de placas (LPR) e antenas veiculares', 'Integração com alarmes, catracas e portarias remotas e híbridas', 'Conexão com Smart Sampa e vizinhança solidária'],
+    implementation: ['Entendimento do objetivo e das regras de alerta', 'Mapeamento das câmeras e dos pontos de análise', 'Configuração dos modelos e das zonas de detecção', 'Testes em campo, calibragem e ajuste de sensibilidade'],
+    differentiators: ['Software desenvolvido pela própria BWE', 'Regras ajustadas à operação real do cliente', 'Integração com todo o ecossistema de segurança', 'Evolução contínua dos modelos de detecção'],
   },
 ]
 

@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import {
-  ArrowRight, Camera, CheckCircle2, Cpu, ScanFace, Headphones, MessageCircle,
+  ArrowRight, BrainCircuit, Camera, CheckCircle2, ScanFace, Headphones, MessageCircle,
   MonitorSmartphone, Phone, Shield, ShieldCheck, Wrench, ClipboardCheck,
 } from 'lucide-react'
 import Header from '../components/layout/Header'
@@ -14,7 +14,7 @@ const ICONS = {
   cftv: <Camera size={26} />,
   'controle-acesso': <ScanFace size={26} />,
   'portaria-remota': <MonitorSmartphone size={26} />,
-  tecnologia: <Cpu size={26} />,
+  tecnologia: <BrainCircuit size={26} />,
 }
 
 const INFO_CARDS = [
@@ -95,6 +95,7 @@ export default function SolutionPage() {
                 src={solution.image}
                 alt={solution.imageAlt}
                 className={styles.heroImage}
+                style={solution.imagePosition ? { objectPosition: solution.imagePosition } : undefined}
                 loading="eager"
               />
             </div>

@@ -24,7 +24,7 @@ export default function CareerPage() {
           <div className={styles.gridTexture} aria-hidden="true" />
           <div className={`container ${styles.heroInner}`}>
             <span className={`section-label section-label-light ${styles.heroLabel}`}>
-              Carreiras
+              Trabalhe Conosco
             </span>
             <h1 className={styles.heroTitle}>
               Venha fazer parte<br />de nossa equipe

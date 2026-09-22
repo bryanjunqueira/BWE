@@ -3,15 +3,22 @@ import styles from './Partners.module.css'
 import intelbrasLogo from '../../assets/partners/intelbras.png'
 import controlidLogo from '../../assets/partners/controlid.png'
 import jflLogo from '../../assets/partners/jfl.png'
-import seventhLogo from '../../assets/partners/Seventh.png'
 import positivoLogo from '../../assets/partners/positivo.png'
+import segwareLogo from '../../assets/partners/segware.png'
+import hikvisionLogo from '../../assets/partners/hikvision.png'
 
-const PARTNERS = [
-  { name: 'Intelbras',   logo: intelbrasLogo },
-  { name: 'Control iD',  logo: controlidLogo },
-  { name: 'JFL Alarmes', logo: jflLogo },
-  { name: 'Seventh',     logo: seventhLogo },
-  { name: 'PositivoSeg', logo: positivoLogo },
+type Partner = {
+  name: string
+  logo: string
+}
+
+const PARTNERS: Partner[] = [
+  { name: 'Intelbras',    logo: intelbrasLogo },
+  { name: 'Control iD',   logo: controlidLogo },
+  { name: 'JFL Alarmes',  logo: jflLogo },
+  { name: 'Positivo Seg', logo: positivoLogo },
+  { name: 'Segware',      logo: segwareLogo },
+  { name: 'Hikvision',    logo: hikvisionLogo },
 ]
 
 // Duplicando a lista para garantir animação contínua e sem sobressaltos no carrossel infinito

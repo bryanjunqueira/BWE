@@ -18,10 +18,10 @@ export default function Home() {
       <Header />
       <main id="main" tabIndex={-1}>
         <Hero />
-        <About />
+        <Portfolio />
         <Services />
         <Differentials />
-        <Portfolio />
+        <About />
         <Equipment />
         <Partners />
         <Testimonials />

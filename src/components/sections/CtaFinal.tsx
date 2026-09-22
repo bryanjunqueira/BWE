@@ -68,7 +68,7 @@ export default function CtaFinal() {
                 <option value="cameras">Câmeras / CFTV</option>
                 <option value="acesso-facial">Acesso facial e catracas</option>
                 <option value="portaria">Portaria remota / híbrida</option>
-                <option value="tecnologia">Tecnologia</option>
+                <option value="tecnologia">Inteligência Artificial</option>
               </select>
             </label>
           </div>
