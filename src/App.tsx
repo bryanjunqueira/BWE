@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfUse from './pages/TermsOfUse'
@@ -15,7 +15,9 @@ function App() {
       <QuoteDrawer />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/carreira" element={<CareerPage />} />
+        <Route path="/trabalhe-conosco" element={<CareerPage />} />
+        {/* URL antiga mantida para não quebrar links já divulgados */}
+        <Route path="/carreira" element={<Navigate to="/trabalhe-conosco" replace />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/solucoes/:slug" element={<SolutionPage />} />
         <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />

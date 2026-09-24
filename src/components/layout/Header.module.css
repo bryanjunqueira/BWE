@@ -158,6 +158,9 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  /* Rótulos de duas palavras (ex.: "Trabalhe Conosco") não podem quebrar em
+     duas linhas: isso deixa o item mais alto que os vizinhos e desalinha a barra */
+  white-space: nowrap;
   font-size: 0.875rem;
   font-weight: 600;
   color: #111827;
@@ -427,6 +430,38 @@
 }
 
 /* Responsive adjustments */
+
+/* Faixa intermediária: o menu completo ainda cabe, mas só recuperando o espaço
+   ocioso da coluna do logo (o logo é quadrado e ocupa ~76px numa coluna de 220px)
+   e apertando um pouco os itens. Sem isso, "Trabalhe Conosco" não cabe. */
+@media (min-width: 1101px) and (max-width: 1320px) {
+  .navInner {
+    grid-template-columns: 120px minmax(0, 1fr) auto;
+    gap: var(--space-3);
+  }
+
+  .logoLink {
+    width: 120px;
+  }
+
+  .logoImg {
+    margin-right: 0;
+  }
+
+  .desktopNav {
+    gap: 0;
+  }
+
+  .navLink {
+    font-size: 0.8125rem;
+    padding: 6px 7px;
+  }
+
+  .ctaBtn {
+    padding: 8px 14px;
+  }
+}
+
 @media (max-width: 1100px) {
   .navInner {
     grid-template-columns: 1fr auto;

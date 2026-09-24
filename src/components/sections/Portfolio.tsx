@@ -3,14 +3,14 @@ import { X } from 'lucide-react'
 import AnimatedSection from '../ui/AnimatedSection'
 import styles from './Portfolio.module.css'
 
-// Fotos da pasta "fotos site" — nenhuma delas se repete em outra seção
-import armarioInteligente1 from '../../assets/armario-inteligente-1.webp'
-import speedDomePark from '../../assets/speed-dome-park.webp'
-import cameraBullet2 from '../../assets/camera-bullet-2.webp'
-import speedDomeStreet from '../../assets/speed-dome-street.webp'
-import xat2000 from '../../assets/xat-2000-lcd.webp'
-import speedDome from '../../assets/speed-dome.webp'
-import casaAutomacao from '../../assets/casa-automacao.webp'
+// Fotos e ordem da pasta "fotos-projetos" — nenhuma se repete em outra seção
+import leitorFacial from '../../assets/controle-facial-1.webp'
+import torreMonitoramento from '../../assets/proj-torre-vigilancia.webp'
+import armarioInteligente from '../../assets/armario-inteligente-1.webp'
+import claviculario from '../../assets/proj-claviculario.webp'
+import antenaVeicular from '../../assets/proj-antena-veicular.webp'
+import catraca from '../../assets/catraca-1.webp'
+import sistemaCftv from '../../assets/proj-sistema-cftv.webp'
 
 interface PortfolioItem {
   id: string
@@ -19,59 +19,68 @@ interface PortfolioItem {
   description: string
   image: string
   featured?: boolean
+  /**
+   * Ponto de foco do recorte (object-position). Fotos verticais em tiles largos
+   * e baixos são cortadas pelo meio; aqui definimos o que não pode sumir.
+   */
+  imagePosition?: string
 }
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 'armario-condominio',
+    id: 'leitor-facial',
+    category: 'Controle de acesso',
+    title: 'Leitor Facial',
+    description: 'Liberação de acesso por reconhecimento facial no portão social',
+    image: leitorFacial,
+    featured: true,
+  },
+  {
+    id: 'torre-monitoramento',
+    category: 'CFTV',
+    title: 'Torre de Monitoramento',
+    description: 'Poste com câmeras cobrindo via pública e entorno, 24 horas',
+    image: torreMonitoramento,
+    featured: true,
+  },
+  {
+    id: 'armario-inteligente',
     category: 'Tecnologia',
-    title: 'Armário inteligente em condomínio',
+    title: 'Armário Inteligente',
     description: 'Locker instalado no hall para recebimento autônomo de encomendas',
-    image: armarioInteligente1,
-    featured: true,
+    image: armarioInteligente,
   },
   {
-    id: 'speed-dome-park',
-    category: 'CFTV',
-    title: 'Speed Dome em área externa',
-    description: 'Monitoramento de perímetro aberto com zoom óptico e giro 360°',
-    image: speedDomePark,
-    featured: true,
+    id: 'claviculario-inteligente',
+    category: 'Controle de acesso',
+    title: 'Claviculário Inteligente',
+    description: 'Guarda de chaves com RFID e registro de retirada e devolução',
+    image: claviculario,
   },
   {
-    id: 'cameras-bullet',
-    category: 'CFTV',
-    title: 'Câmeras bullet instaladas',
-    description: 'Duplo ponto de vigilância externa com caixa de passagem organizada',
-    image: cameraBullet2,
-  },
-  {
-    id: 'speed-dome-street',
-    category: 'CFTV',
-    title: 'Speed Dome em fachada',
-    description: 'Câmera PTZ em braço alto para cobrir toda a frente do imóvel',
-    image: speedDomeStreet,
-  },
-  {
-    id: 'alarme-residencial',
-    category: 'Alarmes',
-    title: 'Central de alarme residencial',
-    description: 'Teclado LCD para ativação por setor, integrado ao monitoramento 24h',
-    image: xat2000,
-  },
-  {
-    id: 'speed-dome-comercio',
-    category: 'CFTV',
-    title: 'Câmera dome em comércio',
-    description: 'Cobertura de entrada e circulação com câmera dome discreta',
-    image: speedDome,
-  },
-  {
-    id: 'automacao-residencial',
+    id: 'antena-veicular',
     category: 'Tecnologia',
-    title: 'Automação residencial',
-    description: 'Casa com automação integrada ao sistema de segurança',
-    image: casaAutomacao,
+    title: 'Antena Veicular',
+    description: 'Identificação automática de veículos para liberação do portão',
+    image: antenaVeicular,
+    // Foto vertical: sem isso o corte deixa a antena cortada no topo do tile
+    imagePosition: 'center 20%',
+  },
+  {
+    id: 'catracas',
+    category: 'Controle de acesso',
+    title: 'Catracas',
+    description: 'Controle de passagem em portarias e recepções com leitor facial',
+    image: catraca,
+    // Foto vertical: sem isso o corte mostra só o corpo, sem o leitor facial
+    imagePosition: 'center 5%',
+  },
+  {
+    id: 'sistema-cftv',
+    category: 'CFTV',
+    title: 'Sistema de CFTV',
+    description: 'Central com dezenas de câmeras monitoradas em tempo real',
+    image: sistemaCftv,
   },
 ]
 
@@ -108,6 +117,7 @@ export default function Portfolio() {
                   src={item.image}
                   alt={item.title}
                   className={styles.itemImg}
+                  style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
                   loading="lazy"
                 />
                 <div className={styles.itemOverlay} />

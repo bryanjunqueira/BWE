@@ -18,6 +18,11 @@ interface EquipmentItem {
   title: string
   description: string
   image: string
+  /**
+   * Ponto de foco do recorte (object-position). Fotos verticais no card, que é
+   * mais largo que alto, são cortadas pelo meio e perdem o topo do equipamento.
+   */
+  imagePosition?: string
 }
 
 const EQUIPMENT: EquipmentItem[] = [
@@ -56,6 +61,8 @@ const EQUIPMENT: EquipmentItem[] = [
     title: 'Torre de Monitoramento com Sistema Smart Sampa',
     description: 'Torre de monitoramento com câmeras em poste exclusivo, interligada ao Smart Sampa para cobertura de grandes perímetros.',
     image: torreMonitoramento,
+    // Foto vertical: sem isso as câmeras do topo do poste ficam cortadas
+    imagePosition: 'center 12%',
   },
   {
     id: 'claviculario',
@@ -68,6 +75,8 @@ const EQUIPMENT: EquipmentItem[] = [
     title: 'Catraca',
     description: 'Catraca com leitor facial para organizar e registrar a passagem de pessoas em portarias e recepções.',
     image: catraca,
+    // Foto vertical: sem isso aparece só o corpo e os braços, sem o leitor facial
+    imagePosition: 'center 5%',
   },
 ]
 
@@ -101,7 +110,10 @@ export default function Equipment() {
       </div>
 
       <div className="container">
-        <div className={styles.carouselWrapper}>
+        {/* A animação de entrada fica no carrossel inteiro, nunca por card: um card
+            fora da tela na horizontal nunca dispara o IntersectionObserver e ficaria
+            invisível para sempre — dava a impressão de que o carrossel não rolava. */}
+        <AnimatedSection className={styles.carouselWrapper}>
           <button
             className={`${styles.scrollBtn} ${styles.scrollBtnLeft}`}
             onClick={() => scroll('left')}
@@ -111,16 +123,21 @@ export default function Equipment() {
           </button>
 
           <div className={styles.carousel} ref={scrollRef}>
-            {EQUIPMENT.map((item, i) => (
-              <AnimatedSection key={item.id} className={styles.card} delay={i * 60}>
+            {EQUIPMENT.map(item => (
+              <div key={item.id} className={styles.card}>
                 <div className={styles.cardImage}>
-                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
+                    loading="lazy"
+                  />
                 </div>
                 <div className={styles.cardBody}>
                   <h3 className={styles.cardTitle}>{item.title}</h3>
                   <p className={styles.cardDesc}>{item.description}</p>
                 </div>
-              </AnimatedSection>
+              </div>
             ))}
           </div>
 
@@ -131,7 +148,7 @@ export default function Equipment() {
           >
             <ChevronRight size={20} />
           </button>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   )

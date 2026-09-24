@@ -56,7 +56,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'Parceiros',    href: '#parceiros' },
   { label: 'Localização',  href: '#localizacao' },
   { label: 'Loja',         href: 'https://wemonitoramento.com.br/home/', isRoute: false, isExternal: true, target: '_blank', rel: 'noopener noreferrer' },
-  { label: 'Trabalhe Conosco', href: '/carreira', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Trabalhe Conosco', href: '/trabalhe-conosco', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
   { label: 'Contato',      href: '#contato' },
 ]
 

@@ -22,7 +22,7 @@ const QUICK_LINKS: QuickLink[] = [
   { label: 'Parceiros',        href: '/#parceiros'     },
   { label: 'Depoimentos',      href: '/#depoimentos'   },
   { label: 'Loja',             href: 'https://wemonitoramento.com.br/home/', isExternal: true },
-  { label: 'Trabalhe Conosco', href: '/carreira', isRoute: true },
+  { label: 'Trabalhe Conosco', href: '/trabalhe-conosco', isRoute: true },
   { label: 'FAQ',              href: '/faq', isRoute: true },
   { label: 'Contato',          href: '/#contato'       },
 ]
