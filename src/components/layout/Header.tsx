@@ -55,7 +55,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'Equipamentos', href: '#equipamentos' },
   { label: 'Parceiros',    href: '#parceiros' },
   { label: 'Localização',  href: '#localizacao' },
-  { label: 'Loja',         href: 'https://wemonitoramento.com.br/home/', isRoute: false, isExternal: true, target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Loja',         href: 'https://wemonitoramento.com.br/home/', isRoute: false, isExternal: true, rel: 'noopener noreferrer' },
   { label: 'Trabalhe Conosco', href: '/trabalhe-conosco', isRoute: true, target: '_blank', rel: 'noopener noreferrer' },
   { label: 'Contato',      href: '#contato' },
 ]
@@ -192,7 +192,6 @@ export default function Header() {
             <div className={styles.topBarSocials}>
               <a
                 href="https://www.instagram.com/we_monitoramento"
-                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className={styles.topSocialIcon}
@@ -201,7 +200,6 @@ export default function Header() {
               </a>
               <a
                 href="https://www.facebook.com/share/19jxpxq6g3/?mibextid=wwXIfr"
-                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className={styles.topSocialIcon}

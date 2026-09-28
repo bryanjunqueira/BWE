@@ -54,7 +54,6 @@ export default function Footer() {
             <div className={styles.socials}>
               <a
                 href="https://www.instagram.com/we_monitoramento"
-                target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
                 aria-label="Instagram"
@@ -63,7 +62,6 @@ export default function Footer() {
               </a>
               <a
                 href="https://www.facebook.com/share/19jxpxq6g3/?mibextid=wwXIfr"
-                target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
                 aria-label="Facebook"
@@ -106,7 +104,6 @@ export default function Footer() {
                     <a
                       href={l.href}
                       className={styles.colLink}
-                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       {l.label}

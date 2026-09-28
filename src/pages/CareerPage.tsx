@@ -4,8 +4,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import WhatsAppFloat from '../components/ui/WhatsAppFloat'
 import styles from './CareerPage.module.css'
-import heroImg from '../assets/trabalhe-conosco-hero.webp'
-import formImg from '../assets/trabalhe-conosco-homem.webp'
+import teamImg from '../assets/trabalhe-conosco-mulher.webp'
 
 export default function CareerPage() {
   const [status, setStatus] = useState('')
@@ -19,23 +18,10 @@ export default function CareerPage() {
     <>
       <Header />
       <main className={styles.main}>
-        {/* ─── HERO: texto à esquerda, profissional ancorada à direita ────── */}
+        {/* ─── HERO: mesmo padrão das demais páginas internas ─────────────── */}
         <section className={styles.hero}>
-          <div className={styles.heroGlow} aria-hidden="true" />
-          <div className={styles.gridTexture} aria-hidden="true" />
-
-          {/* Altura manda no tamanho da foto (width: auto), então ela nunca é
-              ampliada nem cortada quando a tela fica mais larga */}
-          <img
-            src={heroImg}
-            alt=""
-            aria-hidden="true"
-            className={styles.heroPhoto}
-            loading="eager"
-          />
-
           <div className={styles.heroOverlay} aria-hidden="true" />
-
+          <div className={styles.gridTexture} aria-hidden="true" />
           <div className={`container ${styles.heroInner}`}>
             <span className={`section-label section-label-light ${styles.heroLabel}`}>
               Trabalhe Conosco
@@ -43,13 +29,6 @@ export default function CareerPage() {
             <h1 className={styles.heroTitle}>
               Venha fazer parte<br />de nossa equipe
             </h1>
-            <p className={styles.heroText}>
-              Buscamos pessoas comprometidas com tecnologia, atendimento e segurança
-              para crescer junto com a nossa operação.
-            </p>
-            <a href="#candidatura" className={`btn btn-primary btn-lg ${styles.heroCta}`}>
-              Enviar candidatura
-            </a>
           </div>
         </section>
 
@@ -61,7 +40,7 @@ export default function CareerPage() {
             <div className={styles.photoCol}>
               <div className={styles.photoWrapper}>
                 <img
-                  src={formImg}
+                  src={teamImg}
                   alt="Profissional da equipe BWE na central de monitoramento"
                   className={styles.teamPhoto}
                   loading="lazy"
