@@ -191,7 +191,7 @@ export default function Header() {
             </div>
             <div className={styles.topBarSocials}>
               <a
-                href="https://www.instagram.com/we_monitoramento"
+                href="https://www.instagram.com/bwe_inove"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className={styles.topSocialIcon}

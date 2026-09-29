@@ -53,7 +53,7 @@ export default function Footer() {
             </p>
             <div className={styles.socials}>
               <a
-                href="https://www.instagram.com/we_monitoramento"
+                href="https://www.instagram.com/bwe_inove"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
                 aria-label="Instagram"
